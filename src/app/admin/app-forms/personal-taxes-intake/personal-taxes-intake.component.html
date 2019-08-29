@@ -1,0 +1,228 @@
+<form [formGroup]="form" *ngIf="render">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Personal Taxes Intake</h4>
+      <div class="form-row mb-4">
+        <div class="col">
+          <div class="form-row">
+            <div class="col-md-10"><label>Start Date</label><input formControlName="start_date" type="text"
+                class="form-control"></div>
+            <div class="col-md-10"><label>Due Date</label><input formControlName="due_date" type="text"
+                class="form-control"></div>
+            <div class="col-md-10"><label>Location</label><input formControlName="location" type="text"
+                class="form-control"></div>
+            <div class="col-md-10"><label>Partner</label><input formControlName="partner" type="text"
+                class="form-control"></div>
+            <div class="col-md-10"><label>Manager</label><input formControlName="manager" type="text"
+                class="form-control"></div>
+            <div class="col-md-10"><label>Referral/Source</label><input formControlName="referral" type="text"
+                class="form-control"></div>
+            <div class="col-md-10"><label>Assign to</label><input formControlName="assign_to" type="text"
+                class="form-control"></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-row">
+            <div class="col-md-10"><label>Engagement Letter Received</label><input
+                formControlName="engagement_letter_received" type="text" class="form-control"></div>
+            <div class="col-md-10"><label>Send Engagement Letter</label><input formControlName="send_engagement_letter"
+                type="text" class="form-control"></div>
+            <div class="col-md-10"><label>Documents Held @</label><input formControlName="documents_held" type="text"
+                class="form-control"></div>
+            <div class="col-md-10"><label>Deposit 30/50%</label><input formControlName="deposit" type="text"
+                class="form-control"></div>
+            <div class="col-md-10"><label>Federal</label><input formControlName="federal" type="text"
+                class="form-control"></div>
+            <div class="col-md-10"><label>State</label><input formControlName="state" type="text" class="form-control">
+            </div>
+            <div class="col-md-10">
+              <label>Returning Client</label>
+              <div class="">
+                <input type="radio" value="YES" formControlName="returning_client" class="">
+                <label class="">YES</label>
+              </div>
+              <div class="">
+                <input type="radio" value="YES" formControlName="returning_client" class="">
+                <label class="">NO</label>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <div class="">
+                <input type="checkbox" formControlName="partner_followup_needed" class="">
+                <label class=""> Partner Followup Needed</label>
+              </div>
+            </div>
+            <!--<div class="col-md-10"><label>FS</label><input type="text" class="form-control"></div>
+            <div class="col-md-10"><label>Books/Cleanup</label><input type="text" class="form-control"></div>
+            <div class="col-md-10"><label>Deposit</label><input type="text" class="form-control"></div>-->
+          </div>
+        </div>
+      </div>
+      <div class="form-row mb-4">
+        <label>Client Notes</label>
+      </div>
+      <div class="form-row mb-4">
+        <div class="col-md-6">
+          <label>POA - CSS </label><input formControlName="poa" type="text" class="form-control">
+          <label>Name:</label><input formControlName="name" type="text" class="form-control">
+          <label>Birthday</label><input formControlName="birthday" type="text" class="form-control">
+          <label>DOD:</label><input formControlName="dod" type="text" class="form-control">
+          <label>Occupation:</label><input formControlName="occupation" type="text" class="form-control">
+          <label>SS:</label><input formControlName="ss" type="text" class="form-control">
+          <label>Phone:</label><input formControlName="phone" type="text" class="form-control">
+          <label>Email:</label><input formControlName="email" type="text" class="form-control">
+        </div>
+        <div class="col-md-6">
+          <label>Type/Year </label><input formControlName="year" type="text" class="form-control">
+          <label>Spouse Name (MFS MFJ)</label><input formControlName="spouse_name" type="text" class="form-control">
+          <label>Birthday: </label><input formControlName="spouse_birthday" type="text" class="form-control">
+          <label>DOD:</label><input formControlName="spouse_dod" type="text" class="form-control">
+          <label>Occupation:</label><input formControlName="spouse_occupation" type="text" class="form-control">
+          <label>SS:</label><input formControlName="spouse_ss" type="text" class="form-control">
+          <label>Address:</label><input formControlName="spouse_address" type="text" class="form-control">
+        </div>
+      </div>
+      <div class="form-row mb-4">
+        <label>Dependents:</label>
+      </div>
+      <ng-container formArrayName="dependents">
+
+        <div class="form-row mb-4 border border-primary" [formGroupName]="0">
+          <div class="col-md-4 col-sm-6"><label>Name</label><input formControlName="name" type="text"
+              class="form-control">
+          </div>
+          <div class="col-md-4 col-sm-6"><label>SS </label><input formControlName="ss" type="text" class="form-control">
+          </div>
+          <div class="col-md-4 col-sm-6"><label>Relationship</label><input formControlName="relationship" type="text"
+              class="form-control">
+          </div>
+          <div class="col-md-4 col-sm-6"><label>Education</label><input formControlName="education" type="text"
+              class="form-control">
+          </div>
+        </div>
+        <div class="form-row mb-4 border border-primary" [formGroupName]="1">
+          <div class="col-md-4 col-sm-6"><label>Name</label><input formControlName="name" type="text"
+              class="form-control">
+          </div>
+          <div class="col-md-4 col-sm-6"><label>SS </label><input formControlName="ss" type="text" class="form-control">
+          </div>
+          <div class="col-md-4 col-sm-6"><label>Relationship</label><input formControlName="relationship" type="text"
+              class="form-control">
+          </div>
+          <div class="col-md-4 col-sm-6"><label>Education</label><input formControlName="education" type="text"
+              class="form-control">
+          </div>
+        </div>
+        <div class="form-row mb-4 border border-primary" [formGroupName]="2">
+          <div class="col-md-4 col-sm-6"><label>Name</label><input formControlName="name" type="text"
+              class="form-control">
+          </div>
+          <div class="col-md-4 col-sm-6"><label>SS </label><input formControlName="ss" type="text" class="form-control">
+          </div>
+          <div class="col-md-4 col-sm-6"><label>Relationship</label><input formControlName="relationship" type="text"
+              class="form-control">
+          </div>
+          <div class="col-md-4 col-sm-6"><label>Education</label><input formControlName="education" type="text"
+              class="form-control">
+          </div>
+        </div>
+      </ng-container>
+
+      <div class="form-row mb-4">
+        <div class="col-md-6 border border-primary">
+          <label>Wages (W-2)</label><input formControlName="wages" type="text" class="form-control">
+          <label><strong>Other Income: </strong></label>
+          <label>Alimony (Need SSN)</label><input formControlName="alimony" type="text" class="form-control">
+          <label>Business Income (See Sch. C wkst.)</label><input formControlName="bussiness_income" type="text" class="form-control">
+          <label>Schedule K-1s</label><input formControlName="schedule_k1s" type="text" class="form-control">
+          <label>Dividends</label><input formControlName="dividends" type="text" class="form-control">
+          <label>Gambling Winnings</label><input formControlName="global_winnings" type="text" class="form-control">
+          <label>Interest</label><input formControlName="interest" type="text" class="form-control">
+          <label>Rental Income (See Sch. E wkst.)</label><input formControlName="rental_income" type="text" class="form-control">
+          <label>Retirement income</label><input formControlName="retirement_income" type="text" class="form-control">
+          <label>Social Security</label><input formControlName="social_security" type="text" class="form-control">
+          <label>Stock Sales</label><input formControlName="stock_sales" type="text" class="form-control">
+          <label>Unemployment</label><input formControlName="unemployment" type="text" class="form-control">
+          <label>Income from Other State</label><input formControlName="income_from_other_states" type="text" class="form-control">
+          <label>Dates</label><input formControlName="dates" type="text" class="form-control">
+          <label>Educator Expenses</label><input formControlName="educator_expenses" type="text" class="form-control">
+        </div>
+        <div class="col-md-6 border border-primary">
+          <label>Standard Deduction : </label><input formControlName="standard_education" type="text" class="form-control">
+          <label>Itemized:</label><input formControlName="itemized" type="text" class="form-control">
+          <label>Real State Property Taxes</label><input formControlName="real_state_property_tax" type="text" class="form-control">
+          <label>Mortgage interest</label><input formControlName="mortgage_interest" type="text" class="form-control">
+          <label>Tax Preparation Fees</label><input formControlName="tax_prapogation_fee" type="text" class="form-control">
+          <label>Sales Tax</label><input formControlName="sales_tax" type="text" class="form-control">
+          <label>Charitable Donations (cash)</label><input formControlName="charitable_donation_cash" type="text" class="form-control">
+          <label>Charitable Donations (non-cash)</label><input formControlName="charitable_donation_non_cash" type="text" class="form-control">
+          <label>Attorney Fees</label><input formControlName="attorney_fees" type="text" class="form-control">
+          <label>Medical expenses</label><input formControlName="medical_expenses" type="text" class="form-control">
+          <label>DMV</label><input formControlName="dmv" type="text" class="form-control">
+          <label><b>Other:</b>Education expenses</label><input formControlName="other" type="text" class="form-control">
+          <label>Student loan interest</label><input formControlName="student_loan_interest" type="text" class="form-control">
+          <label>Childcare (Day care credit)</label><input formControlName="childcare" type="text" class="form-control">
+          <label>IRA/Retirement Contribution</label><input formControlName="ira" type="text" class="form-control">
+          <label>Moving expenses</label><input formControlName="moving_expense" type="text" class="form-control">
+          <label>Energy Credits</label><input formControlName="energy_credits" type="text" class="form-control">
+        </div>
+      </div>
+
+      <div class="card-title">Healthcare:</div>
+      <div class="form-row mb-4">
+        <div class="col-md-6">
+          <b>Taxpayer & Dependents insured for entire year? How is Taxpayer Insured: Need Form 1095?: (Circle)</b>
+          <label>Employer/SS 1095C</label><input formControlName="c1095" type="text" class="form-control">
+          <label>Marketplace 1095A</label><input formControlName="a1095" type="text" class="form-control">
+        </div>
+
+        <div class="col-md-6">
+          <label>Other Items Needed::</label><textarea formControlName="other_item_needed" cols="20" rows="5" class="form-control"></textarea>
+        </div>
+      </div>
+
+      <div class="form-row mb-4">
+        <div class="col-md-6">
+          <label>Form 2106:</label><textarea formControlName="form_2016" cols="20" rows="5" class="form-control"></textarea>
+        </div>
+
+        <div class="col-md-6">
+          <label>Schedule K-1s (UA to do) : </label><textarea formControlName="ua_to_do" cols="20" rows="5" class="form-control"></textarea>
+        </div>
+      </div>
+      <div class="card-title">Other Notes:</div>
+      <div class="form-row mb-4">
+        <div class="col-md-12">
+          <label>Future Services to discuss:</label><textarea formControlName="service_to_discuss" cols="20" rows="5" class="form-control"></textarea>
+        </div>
+      </div>
+
+
+      <div class="form-row mb-4">
+        <div class="col-md-6">
+          <label>Partner Acceptance</label><textarea formControlName="partner_acceptance" cols="20" rows="5" class="form-control"></textarea>
+        </div>
+
+        <div class="col-md-6">
+          <div class="col">
+            <div class="form-row">
+              <label>Expected refund/due: </label><input formControlName="expeted_refund" type="text" class="form-control">
+              <label>Routing Number: </label><input formControlName="routing_number" type="text" class="form-control">
+              <label>Account Number: </label><input formControlName="account_number" type="text" class="form-control">
+              <label>Financial institution: </label><input formControlName="financial_istituion" type="text" class="form-control">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row mb-4">
+        <div class="col-md-6">
+          <label>Date</label><input formControlName="date" type="text" class="form-control">
+        </div>
+        <div class="col-md-6">
+          <label>Estimated Tax Coupons Needed?</label><input formControlName="estimated_tax" type="checkbox"> Yes <input type="checkbox"> No
+        </div>
+      </div>
+
+    </div>
+  </div>
+</form>

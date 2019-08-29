@@ -1,0 +1,15 @@
+.modal-modified .modal-lg {
+    max-width: 90% !important;
+  }
+  .modal{
+    display: block !important; /* I added this to see the modal, you don't need this */
+}
+
+/* Important part */
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-modified .modal-body{
+    height: 77vh;
+    overflow-y: auto;
+}

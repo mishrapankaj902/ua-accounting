@@ -1,0 +1,219 @@
+<form (submit)="submit()" [formGroup]="form" class="p-3" *ngIf="render">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex flex-column_">
+        <div>
+          <img src="assets/images/nevada-logo.png" style="width:150px;">
+        </div>
+        <div>
+          <h2 class="text-center">NEVADA STATE CONTRACTORS BOARD</h2> 
+          <div style="width: 80%" class="m-auto text-center">
+            <small>5390 KIETZKE LANE, SUITE 102, RENO, NEVADA, 89511 (775) 688-1141 FAX (775) 688-1271, INVESTIGATIONS (775) 688-1150 <br>2310 CORPORATE CIRCLE, SUITE 200, HENDERSON, NEVADA, 89074 (702) 486-1100 FAX (702) 486-1190, INVESTIGATIONS (702) 486-1110</small> <br><strong>www.nscb.nv.gov</strong>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <h5 class="text-center">BANK VERIFICATION FORM</h5>
+      <br>
+      <div class="form-group">
+        <label>Name of Licensee/Applicant <span style="color:red;">*</span></label>
+        <input class="form-control" type="text" formControlName="applicant" maxlength="20" required
+          placeholder="Name of Licensee/Applicant" />
+        <small *ngIf="form.controls.applicant.touched && form.controls.applicant.invalid" class="text text-danger">This field is required.</small>
+      </div>
+      <div class="form-group">
+        <label>Items 1 through 3 of the following report are to be completed by the applicant. Items 4
+          through 10 are to be completed by the verifying bank. <u>After completion by you and your bank,
+          submit this form with your application.</u></label>
+      </div>
+      <div class="form-group">
+        <label>1. Name and address of bank <span style="color:red;">*</span></label>
+        <textarea class="form-control" rows="2" cols="30" name="textarea" formControlName="bank_address"></textarea>
+        <small *ngIf="form.controls.bank_address.touched && form.controls.bank_address.invalid"
+          class="text text-danger">This field is required.</small>
+      </div>
+      <div class="form-group">
+          <label>2. Signature of account holder(s) </label>
+          <span class="badge badge-success">This step will be done automatically.</span>
+        </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h6>3. Information to be verified:</h6>
+    </div>
+    <div class="card-body" formArrayName="bank_account">
+      <ng-container>
+          <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <th>Type of Account</th>
+                  <th>Account Name</th>
+                  <th>Account Number</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of form.controls['bank_account'].controls; let i=index" [formGroupName]="i">
+                    <td>
+                      <select class="form-control" formControlName="type_of_account">
+                        <option value="checkings">Checkings</option>
+                        <option value="savings">Savings</option>
+                      </select>
+                    </td>
+                    <td><input type="text" class="form-control" formControlName="account_name" maxlength="20"/></td>
+                    <td><input type="text" class="form-control" formControlName="account_number" maxlength="20" /></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h6>TO VERIFYING BANK: Please furnish the information requested below.</h6>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label>4. Classification of Account:</label>
+        <br />
+        <div class="table-responsive">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>
+                      <label class="form-check-label">
+                          <input type="radio" value="individual" formControlName="account_classification" checked />
+                          <span>&nbsp;&nbsp; Individual</span>
+                        </label>
+                  </td>
+                  <td><label class="form-check-label">
+                      <input type="radio" value="corporation" formControlName="account_classification">
+                      <span>&nbsp;&nbsp; Corporation</span>
+                    </label>
+                  </td>
+                  <td><label class="form-check-label">
+                      <input type="radio" value="partnership" formControlName="account_classification">
+                      <span>&nbsp;&nbsp; Partnership</span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                      <label class="form-check-label">
+                        <input type="radio" value="limited_partnership" formControlName="account_classification">
+                        <span>&nbsp;&nbsp; Limited Partnership</span>
+                      </label>
+                  </td>
+                  <td><label class="form-check-label">
+                      <input type="radio" value="limited_liability_company" formControlName="account_classification">
+                      <span>&nbsp;&nbsp; Limited Liability Company</span>
+                    </label></td>
+                  <td>&nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h6>5. Deposit accounts of Applicants:</h6>
+    </div>
+    <div class="card-body" formArrayName="deposite_account">
+      <ng-container >
+          <div class="table-responsive">
+              <table class="table table-bordered table-highlight">
+                <thead>
+                  <th>*Account Name</th>
+                  <th>Type</th>
+                  <th>*Account Number</th>
+                  <th>*Current Balance</th>
+                  <th>*Six(6) Month Average</th>
+                  <th>*Date Opened</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of form.controls['deposite_account'].controls; let i=index" [formGroupName]="i">
+                      <td><input type="text" class="form-control" formControlName="account_name" maxlength="25" /></td>
+                      <td><select class="form-control" formControlName="account_type">
+                        <option value="checkings">Checkings</option>
+                        <option value="savings">Savings</option>
+                      </select>
+                    </td>
+                    <td><input type="text" class="form-control" formControlName="account_number" maxlength="20" /></td>
+                    <td><input type="text" class="form-control" formControlName="account_balance" maxlength="10" /></td>
+                    <td><input type="text" class="form-control" formControlName="average" maxlength="25"/></td>
+                    <td><input type="date" class="form-control" formControlName="date_opened" /></td>
+                  </tr>
+                </tbody>
+              </table>
+              *Required Information
+            </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h6>6. Verification of Lines of Credit:</h6>
+    </div>
+    <div class="card-body" formArrayName="account_credit_lines">
+      <ng-container>
+          <div class="table-responsive">
+              <table class="table table-bordered table-highlight">
+                <thead>
+                  <th>Line of Credit Account #</th>
+                  <th>Type of Credit Line</th>
+                  <th>Date Opened</th>
+                  <th>Approved Amount</th>
+                  <th>Current Balance</th>
+                  <th>Payments Required</th>
+                  <th>Secured By</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of form.controls['account_credit_lines'].controls; let i=index" [formGroupName]="i">
+                      <td><input type="text" class="form-control" formControlName="line_of_credit_account" maxlength="20" /></td>
+                      <td><select class="form-control" formControlName="type_of_credit_line">
+                        <option value="home">Home</option>
+                        <option value="equity">Equity</option>
+                        <option value="personal">Personal</option>
+                        <option value="business">Business</option>
+                      </select>
+                    </td>
+                    <td><input type="date" class="form-control" formControlName="date_opened" /></td>
+                    <td><input type="text" class="form-control" formControlName="approved_amount" maxlength="10"/></td>
+                    <td><input type="text" class="form-control" formControlName="current_balance" maxlength="10" /></td>
+                    <td><input type="text" class="form-control" formControlName="payments_required" maxlength="10"/></td>
+                    <td><input type="text" class="form-control" formControlName="secured_by" maxlength="10" /></td>
+                  </tr> 
+                </tbody>
+              </table>
+            </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="form-group">
+        <label class="card-title">7. Additional information that may be of assistance in determination of credit worthiness</label>
+        <textarea class="form-control" rows="2" cols="30" name="textarea" formControlName="additional_info"></textarea>
+      </div>
+      <div class="form-group">
+          <label class="card-title">8. Affix bank Stamp or Business Card of Bank Representative here.</label>
+          <span class="badge badge-success">This step will be done Manually.</span>
+        </div>
+      <div class="form-group">
+        <label>9. Name and Title of Bank Representative <span style="color:red;">*</span></label>
+        <input class="form-control" formControlName="bank_representative" maxlength="50" />
+        <small *ngIf="form.controls.bank_representative.touched && form.controls.bank_representative.invalid" class="text text-danger">This field is required.</small>
+      </div>
+      <div class="form-group">
+        <label>10. Date <span style="color:red;">*</span></label>
+        <input class="form-control" formControlName="verification_date" type="date" />
+        <small *ngIf="form.controls.verification_date.touched && form.controls.verification_date.invalid" class="text text-danger">This field is required.</small>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,487 @@
+<form [formGroup]="form" class="p-3" *ngIf="render">
+  <div class="card">
+      <div class="card-header">
+          <h6>C.S.S. REQUEST FORM</h6>
+        </div>
+    <div class="card-body row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>START DATE</label>
+            <input formControlName="start_date" class="form-control" type="date" placeholder="START DATE">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>LOCATION</label>
+            <input formControlName="location" class="form-control" type="text" placeholder="LOCATION">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>PARTNER</label>
+            <input formControlName="partner" class="form-control" type="text" placeholder="PARTNER">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>MANAGER</label>
+            <input formControlName="manager" class="form-control" type="text" placeholder="MANAGER">
+          </div>
+        </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>RETURNING CLIENT</label>
+          <input formControlName="returning_client" type="radio" value="YES"><label>YES</label>
+          <input formControlName="returning_client" type="radio" value="NO"><label>NO</label>
+          <em>
+            (Section A not required for Return Clients)
+          </em>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label>Send Results to:</label>
+        </div>
+      </div>
+    </div>
+      <div class="form-row" [formGroupName]="'send_result_to'">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Name:</label>
+            <input formArrayName="name" class="form-control" type="text" placeholder="Name of Licensee/Applicant">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Look in CS Practice (Y/N)</label>
+          </div>
+
+          <div class="form-group">
+            <label>Yes</label>
+            <input formControlName="look_in_cs_practice" type="radio" value="YES">
+            <label>No</label>
+            <input formControlName="name" type="radio" value="NO">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+          <div class="form-group">
+            <label>Busines Name</label>
+            <input formControlName="business_name" class="form-control" type="text" placeholder="Busines Name">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label>POA</label>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <input formControlName="business_name_poa" class="checkbox" type="radio">
+            <label>Request</label>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <input formControlName="business_name_poa" class="checkbox" type="radio">
+            <label>In File</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+          <div class="form-group">
+            <label>Personal Name:</label>
+            <input formControlName="personal_name" class="form-control" type="text" placeholder="Personal Name">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label>POA</label>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <input formControlName="personal_name_poa" class="checkbox" type="radio">
+            <label>Request</label>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <input formControlName="personal_name_poa" class="checkbox" type="radio">
+            <label>In File</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Personal Name (Spouse):</label>
+            <input formControlName="personal_name_spouse" class="form-control" type="text" placeholder="Personal Name">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>POA</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <input formControlName="personal_name_spouse_poa" class="checkbox" type="radio">
+            <label>Request</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <input formControlName="personal_name_spouse_poa" class="checkbox" type="radio">
+            <label>In File</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  <div class="card" [formGroupName]="'section_a'">
+    <div class="card-header">
+      <h6>Section A: New Clients or Changes to Information.</h6>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="form-group">
+          <label> ADDRESS </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Business :</label>
+            <textarea formControlName="address_business" class="form-control" rows="2" cols="20"></textarea>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Personal :</label>
+            <textarea formControlName="address_personal" class="form-control" rows="2" cols="20"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label> EIN/SSN </label>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label> EIN </label>
+            <input formControlName="ein" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label> Taxpayer SSN </label>
+            <input formControlName="taxpayer_ssn" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label> Spouse SSN (if needed) </label>
+            <input formControlName="spouce_ssn" type="text" class="form-control">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label> CONTACT </label>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="form-group">
+            <label> Phone Number </label>
+            <input formControlName="phone" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label> Email </label>
+            <input formControlName="email" type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h6>SECRETARY OF STATE</h6>
+    </div>
+    <div class="card-body">
+      <ng-container [formGroupName]="'seceretary_of_state'">
+
+        <div class="row">
+          <div class="col-md-4">
+            <span>Circle</span>
+            <input formControlName="circle" type="checkbox">
+          </div>
+          <div class="col-md-4">
+            <span>See Form</span>
+            <input formControlName="see_form" type="checkbox">
+
+
+          </div>
+          <div class="col-md-4">
+            <span>Email Client</span>
+            <input formControlName="email_client" type="checkbox">
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <span>Fee</span>
+            <input formControlName="fee" type="text" class="form-control">
+          </div>
+          <div class="col-md-3">
+            <span>Bill and Collect Now</span>
+            <input formControlName="collect_now" type="text" class="form-control">
+          </div>
+          <div class="col-md-2">
+            <span>Apply to Credit</span>
+            <input formControlName="apply_to_credit" type="text" class="form-control">
+          </div>
+          <div class="col-md-2">
+            <span>Collect Later</span>
+            <input formControlName="collect_later" type="text" class="form-control">
+          </div>
+          <div class="col-md-2">
+            <span>Due Date</span>
+            <input formControlName="due_date" type="date" class="form-control">
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <hr>
+  <!------>
+  <ng-container [formGroupName]="'wage_income_transcripts'">
+    <div class="row">
+      <label>Wage Income Transcripts</label>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <span>Years</span>
+        <input formControlName="fee" type="text" class="form-control">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <span>Fee</span>
+        <input formControlName="years" type="text" class="form-control">
+      </div>
+      <div class="col-md-3">
+        <span>Bill and Collect Now</span>
+        <input formControlName="bill_collect_now" type="text" class="form-control">
+      </div>
+      <div class="col-md-2">
+        <span>Apply to Credit</span>
+        <input formControlName="apply_to_credit" type="text" class="form-control">
+      </div>
+      <div class="col-md-2">
+        <span>Collect Later</span>
+        <input formControlName="collect_later" type="text" class="form-control">
+      </div>
+      <div class="col-md-2">
+        <span>Due Date</span>
+        <input formControlName="due_date" type="date" class="form-control">
+      </div>
+    </div>
+  </ng-container>
+  <hr>
+  <!---tets-->
+  <ng-container [formGroupName]="'account_transcripts'">
+    <div class="row">
+      <label>Account Transcripts</label>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <span>Years</span>
+        <input formControlName="years" type="text" class="form-control">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <span>Fee</span>
+        <input formControlName="fee" type="text" class="form-control">
+      </div>
+      <div class="col-md-3">
+        <span>Bill and Collect Now</span>
+        <input formControlName="bill_collect_now" type="text" class="form-control">
+      </div>
+      <div class="col-md-2">
+        <span>Apply to Credit</span>
+        <input formControlName="apply_to_credit" type="text" class="form-control">
+      </div>
+      <div class="col-md-2">
+        <span>Collect Later</span>
+        <input formControlName="collect_later" type="text" class="form-control">
+      </div>
+      <div class="col-md-2">
+        <span>Due Date</span>
+        <input formControlName="due_date" type="date" class="form-control">
+      </div>
+    </div>
+  </ng-container>
+  <!---tets-->
+
+  <hr>
+  <!---tets-->
+  <ng-container [formGroupName]="'compliance_check'">
+    <div class="row">
+      <label>Compliance Check</label>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <span>Years</span>
+        <input formControlName="years" type="text" class="form-control">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <span>Fee</span>
+        <input formControlName="fee" type="text" class="form-control">
+      </div>
+      <div class="col-md-3">
+        <span>Bill and Collect Now</span>
+        <input formControlName="bill_collect_now" type="text" class="form-control">
+      </div>
+      <div class="col-md-2">
+        <span>Apply to Credit</span>
+        <input formControlName="apply_to_credit" type="text" class="form-control">
+      </div>
+      <div class="col-md-2">
+        <span>Collect Later</span>
+        <input formControlName="collect_later" type="text" class="form-control">
+      </div>
+      <div class="col-md-2">
+        <span>Due Date</span>
+        <input formControlName="due_date" type="date" class="form-control">
+      </div>
+    </div>
+  </ng-container>
+  <!---tets-->
+  <hr>
+
+  <!---tets-->
+  <div class="row">
+    <label>Installment Agreement</label>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <span>Years</span>
+      <input type="text" class="form-control">
+    </div>
+    <div class="col-md-3">
+      <span>Fee</span>
+      <input type="text" class="form-control">
+    </div>
+    <div class="col-md-3">
+      <span>Bill and Collect Now</span>
+      <input type="text" class="form-control">
+    </div>
+    <div class="col-md-3">
+      <span>Apply to Credit</span>
+      <input type="text" class="form-control">
+    </div>
+    <div class="col-md-3">
+      <span>Collect Later</span>
+      <input type="text" class="form-control">
+    </div>
+  </div>
+  <div class="row">
+    <label>OTHER REQUEST:</label>
+  </div>
+  <ng-container [formGroupName]="'other_request'">
+    <div class="row">
+      <div class="col-md-3">
+        <span>Request:</span>
+        <input formControlName="request" type="text" class="form-control">
+      </div>
+      <div class="col-md-3">
+        <span>Fee</span>
+        <input formControlName="fee" type="text" class="form-control">
+      </div>
+      <div class="col-md-3">
+        <span>Bill and Collect Now</span>
+        <input formControlName="bill_collect_now" type="text" class="form-control">
+      </div>
+      <div class="col-md-2">
+        <span>Apply to Credit</span>
+        <input formControlName="apply_to_credit" type="text" class="form-control">
+      </div>
+      <div class="col-md-2">
+        <span>Collect Later</span>
+        <input formControlName="collect_later" type="text" class="form-control">
+      </div>
+      <div class="col-md-2">
+        <span>Due Date</span>
+        <input formControlName="due_date" type="text" class="form-control">
+      </div>
+    </div>
+  </ng-container>
+  <hr>
+
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="form-group">
+          <label> What is the Plan? </label>
+          <textarea formControlName="what_is_plan" class="form-control" rows="2" cols="60"></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label>
+            Other Notes:
+          </label>
+          <textarea formControlName="other_notes" class="form-control" rows="2" cols="60"></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <p>
+          <b>Compliance Check</b> includes; Years owing, Years unfiled, obtain account transcripts for years owing,
+          W&I
+          for unfiled. Payroll Filings and periods owed for is included with Business Compliance Check.
+          For years owing, obtain breakdown of principal, penalty by type, and interest.
+        </p>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          PARTNER ACCEPTANCE
+        </div>
+        <input formControlName="partner_acceptance" type="text" class="form-control">
+      </div>
+    </div>
+  </div>
+</form>

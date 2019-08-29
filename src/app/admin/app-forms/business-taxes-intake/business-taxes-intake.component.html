@@ -1,0 +1,302 @@
+<form [formGroup]="form" *ngIf="render">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Client Notes - Business Taxes</h4>
+      <div class="form-row mb-4">
+        <div class="col-md-6"><label>Start Date</label>
+          <input formControlName="control" type="date" class="form-control"
+            formControlName="start_date">
+          </div>
+        <div class="col-md-6"><label>Due Date</label><input formControlName="control" type="date" class="form-control" formControlName="due_date">
+        </div>
+        <div class="col-md-6"><label>Location</label><input type="text" class="form-control" formControlName="location">
+        </div>
+        <div class="col-md-6"><label>Partner</label><input type="text" class="form-control" formControlName="partner">
+        </div>
+        <div class="col-md-6"><label>Manager</label><input type="text" class="form-control" formControlName="manager">
+        </div>
+        <div class="col-md-6"><label>Referral/Source</label><input type="text" class="form-control"
+            formControlName="source"></div>
+        <div class="col-md-6"><label>Assign to</label><input type="text" class="form-control"
+            formControlName="assign_to"></div>
+        <div class="col-md-6 align-self-end">
+          <label>Return Client</label>
+            <input type="radio" value="1" class="" formControlName="return_client" checked /> YES
+         
+            <input type="radio" value="0" class="" formControlName="return_client" />  NO
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4" [formGroupName]="'client_notes'">
+    <div class="card-body">
+      <div class="form-row mb-4">
+        <div class="col-md-4"><label>Federal:</label><input formControlName="federal" type="text" class="form-control">
+        </div>
+        <div class="col-md-4"><label>Books:</label><input formControlName="books" type="text" class="form-control">
+        </div>
+        <div class="col-md-4"><label>S Election:</label><input formControlName="s_election_amount" type="text"
+            class="form-control"></div>
+        <div class="col-md-4"><label>State: </label>
+          <div class="form-row">
+            <input formControlName="state_name" type="text" class="col-9 form-control" placeholder="Name">
+            <input formControlName="state_amount" type="text" class="col-3 form-control" placeholder="Amount">
+          </div>
+        </div>
+        <div class="col-md-4"><label>1099s:</label><input formControlName="label_1099s" type="text"
+            class="form-control"></div>
+        <div class="col-md-4"><label>Deposit</label><input formControlName="deposit" type="text" class="form-control">
+        </div>
+        <div class="col-md-4 align-self-end form-check">
+          <label class="form-check-label">Partner Followup Needed</label>
+          <input formControlName="followup_needed" class="form-check-input" type="checkbox" class="form-control">
+        </div>
+        <div class="col-md-4 align-self-end form-check">
+          <label class="form-check-label mr-5">Return docs @</label>
+          <input type="checkbox" class="form-check-input">
+        </div>
+        <div class="col-md-4 align-self-end">
+          <div class="form-check form-check-inline">
+            <input formControlName="engagement_letter" type="radio" class="form-check-input" value="1" checked />
+            <label class="form-check-label">Engagement Letter Received Send</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input formControlName="engagement_letter" type="radio" class="form-check-input" value="2">
+            <label class="form-check-label">Engagement Letter</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card  mb-4">
+    <div class="card-body form-row">
+      <div class="col-md-6">
+        <label>Business Name <span style="color:red;">*</span></label>
+        <input formControlName="business_name" type="text" class="form-control">
+        <small *ngIf="form.controls.business_name.touched && form.controls.business_name.invalid" class="text text-danger">This field is required.</small>
+      </div>
+
+      <div class="col-md-6">
+        <label>EIN <span style="color:red;">*</span></label>
+        <input formControlName="ein" maxlength="9" type="text" class="form-control">
+        <small *ngIf="form.controls.ein.touched && form.controls.ein.invalid" class="text text-danger">This field is required.</small>
+      </div>
+
+      <div class="col-md-6">
+        <label>Phone <span style="color:red;">*</span></label>
+        <input formControlName="phone" type="text" class="form-control" maxlength="15">
+        <small *ngIf="form.controls.phone.touched && form.controls.phone.invalid" class="text text-danger">This field is required.</small>
+      </div>
+
+      <div class="col-md-6">
+        <label>Email <span style="color:red;">*</span></label>
+        <input formControlName="email" type="text" class="form-control" />
+        <small *ngIf="form.controls.email.touched && form.controls.email.invalid" class="text text-danger">This field is required.</small>
+      </div>
+
+      <div class="col-md-6">
+        <label>Business Address:</label>
+        <input formControlName="business_address" type="text" class="form-control">
+      </div>
+
+      <div class="col-md-6">
+        <label>Owner:</label>
+        <input formControlName="owner" type="text" class="form-control">
+      </div>
+
+      <div class="col-md-6">
+        <label class="mb-2">Owner's address:</label>
+        <textarea formControlName="owner_address" class="form-control" cols="10" rows="2"></textarea>
+      </div>
+
+      <div class="col-md-6">
+        <label>Industry Type:</label>
+        <textarea formControlName="industry_type" class="form-control" cols="10" rows="2"></textarea>
+      </div>
+
+      <div class="col-md-6 align-self-end">
+        <label>Type of Business (circle one): </label> <br>
+        <div class="form-check form-check-inline">
+          <input type="radio" value="1120S" formControlName="type_of_business" class="form-check-input" checked />
+          <label class="form-check-label">1120S</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" value="1065" formControlName="type_of_business" class="form-check-input">
+          <label class="form-check-label">1065</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" value="1120" formControlName="type_of_business" class="form-check-input">
+          <label class="form-check-label">1120</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" value="1041" formControlName="type_of_business" class="form-check-input">
+          <label class="form-check-label">1041</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" value="sch-c" formControlName="type_of_business" class="form-check-input">
+          <label class="form-check-label">Sch C</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label>Years to be filed :</label>
+        <input type="text" class="form-control" formControlName="year_to_be_filled">
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4" formGroupName="bookkeeping_information">
+    <div class="card-header">
+      <h5>Bookkeeping Information:</h5>
+    </div>
+    <div class="card-body">
+      <div class="form-row">
+        <div class="col-md-6 align-self-end">
+          <label>Format (Circle): </label> <br>
+          <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" formControlName="is_qbooks">
+            <label class="form-check-label">Qbooks</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" formControlName="is_pbc">
+            <label class="form-check-label" >PBC</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" formControlName="is_excel">
+            <label class="form-check-label" >Excel</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" formControlName="is_other">
+            <label class="form-check-label" >Other</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label>Passwords:</label>
+          <input type="text" class="form-control" formControlName="passwords">
+        </div>
+        <div class="col-md-6">
+          <label>Special Notes:</label>
+          <input type="text" class="form-control" formControlName="special_notes">
+        </div>
+        <div class="col-md-6">
+          <label>Officer Salary/Guarenteed Payments: </label>
+          <input type="text" class="form-control" formControlName="officer_salary">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card mb-3" formGroupName="us_todo_books">
+    <div class="card-body">
+      <div class="card-title"><label>UA to do Books:</label></div>
+      <div class="form-row">
+        <div class="col-md-4">
+          <label>Months:</label>
+          <input formControlName="months" type="text" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label>Years:</label>
+          <input formControlName="years" type="text" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label>Bank Accounts:</label>
+          <input formControlName="bank_accounts" type="text" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label>Loans:</label>
+          <input formControlName="loans" type="text" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label>CC Accounts:</label>
+          <input formControlName="cc_accounts" type="text" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label>Payroll:</label>
+          <input formControlName="payroll" type="text" class="form-control">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card mb-3" formGroupName="personally_paid_items">
+    <div class="card-body">
+      <div class="card-title"><label>Other items paid personally?</label> </div>
+      <div class="form-row">
+        <div class="col-md-4">
+          <label>Health insurance </label>
+          <input formControlName="health_insurance" type="text" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label>Computers/internet</label>
+          <input formControlName="computers_internet" type="text" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label>Auto expense </label>
+          <input formControlName="auto_expense" type="text" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label>Professional dues</label>
+          <input formControlName="professional_dues" type="text" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label>Cell Phone </label>
+          <input formControlName="cell_phone" type="text" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label>Furniture/equipment</label>
+          <input formControlName="furniture_equipment" type="text" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label>Home office</label>
+          <input formControlName="home_office" type="text" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label>Total</label>
+          <input formControlName="total" type="text" class="form-control">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <div class="form-row">
+        <div class="col-md-4">
+          <label>Copy of W-2/W-3s/or P/R summary-</label>
+          <input formControlName="copy_of_w2_w3s_pr" type="text" class="form-control">
+        </div>
+
+        <div class="col-md-4">
+          <label>Loan Statements-</label>
+          <input formControlName="loan_statements" type="text" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label>Prior Depreciation reports-</label>
+          <input formControlName="prior_depreciation_reports" type="text" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label>Obtain copy of last year return-</label>
+          <input formControlName="copy_of_last_year_return" type="text" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label>Personal Interest:</label>
+          <textarea formControlName="personal_interest" class="form-control" cols="10" rows="2"></textarea>
+        </div>
+        <div class="col-md-4">
+          <label>Notes:</label>
+          <textarea formControlName="notes" class="form-control" cols="10" rows="2"></textarea>
+        </div>
+        <div class="col-md-4">
+          <label>Additional Services to discuss:</label>
+          <textarea formControlName="additional_service" class="form-control" cols="10" rows="2"></textarea>
+        </div>
+        <div class="col-md-4">
+          <label>Partner Acceptance</label>
+          <textarea formControlName="partner_acceptance" class="form-control" cols="10" rows="2"></textarea>
+        </div>
+        <div class="col-md-4">
+          <label>Description of business conducted:</label>
+          <textarea class="form-control" cols="10" rows="2"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

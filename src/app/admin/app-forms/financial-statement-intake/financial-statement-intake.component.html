@@ -1,0 +1,170 @@
+<form [formGroup]="form" *ngIf="render">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Financial Form</h4>
+      <div class="form-row mb-4">
+        <div class="col">
+          <div class="form-row">
+            <div class="col-md-10"><label>Start Date</label><input formControlName="start_date" type="date" class="form-control"></div>
+            <div class="col-md-10"><label>Due Date</label><input formControlName="due_date" type="text"
+                class="form-control"></div>
+            <div class="col-md-10"><label>Location</label><input formControlName="location" type="text"
+                class="form-control"></div>
+            <div class="col-md-10"><label>Partner</label><input formControlName="partner" type="text"
+                class="form-control"></div>
+            <div class="col-md-10"><label>Manager</label><input formControlName="manager" type="text"
+                class="form-control"></div>
+            <div class="col-md-10"><label>Referral/Source</label><input formControlName="source" type="text" class="form-control"></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-row">
+            <div class="col-md-10">
+              <label>Returning Client</label>
+              <div class="">
+                <input formControlName="returning_client" type="radio" value="YES">
+                <label class="">YES</label>
+              </div>
+              <div class="">
+                <input formControlName="returning_client" type="radio" value="NO">
+                <label class="">NO</label>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <div class="">
+                <input formControlName="documents_returned" type="checkbox">
+                <label class="">Documents Returned to client</label>
+              </div>
+            </div>
+            <div class="col-md-10"><label>FS</label><input formControlName="FS" type="text" class="form-control"></div>
+            <div class="col-md-10"><label>Books/Cleanup</label><input formControlName="book_cleanup" type="text"
+                class="form-control"></div>
+            <div class="col-md-10"><label>Deposit</label><input formControlName="deposit" type="text"
+                class="form-control"></div>
+            <div class="col-md-10"><label>Assign to</label><input formControlName="assign_to" type="text"
+                  class="form-control"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row mb-4">
+        <div class="col-md-6"><label>Business Name:</label><input formControlName="business_name" type="text"
+            class="form-control"></div>
+        <div class="col-md-6"><label>EIN</label><input formControlName="EIN" type="text" class="form-control"></div>
+        <div class="col-md-6"><label>Phone</label><input formControlName="phone" type="text" class="form-control"></div>
+        <div class="col-md-6"><label>Email: </label><input formControlName="email" type="text" class="form-control">
+        </div>
+        <div class="col-md-6"><label>Address Contract:</label><input formControlName="address" type="text"
+            class="form-control"></div>
+        <div class="col-md-6"><label>Business Owner (s)</label><input formControlName="business_owner" type="text"
+            class="form-control"></div>
+        <div class="col-md-6"><label>Bid Amount:</label><input formControlName="bid_amount" type="text"
+            class="form-control"></div>
+        <div class="col-md-6"><label>Industry Type:</label><input formControlName="industry_type" type="text"
+            class="form-control"></div>
+        <div class="col-md-6"><label>Length of Contract:</label><input formControlName="length_of_contract" type="text"
+            class="form-control"></div>
+      </div>
+      <div class="form-row mb-4">
+        <label>CS Project Template ID (ID Must be filled out):</label><input formControlName="cs_project_template_id"
+          type="text" class="form-control">
+      </div>
+      <div class="card-title"><strong>C </strong> Compilation:</div>
+      <div class="form-row mb-4" formGroupName="compliation">
+        <div class="col-md-4"><label><strong>FD </strong> /Full Disc </label><input formControlName="full_disc"
+            type="text" class="form-control">
+        </div>
+        <div class="col-md-4"><label><strong>ND </strong> /Non Disc </label><input formControlName="non_disc"
+            type="text" class="form-control">
+        </div>
+        <div class="col-md-4"><label><strong>CF </strong> /Cash Flows </label><input formControlName="CPFS" type="text"
+            class="form-control">
+        </div>
+        <div class="col-md-4"><label><strong>W </strong> /WIP</label><input formControlName="WIP" type="text"
+            class="form-control"></div>
+        <div class="col-md-4"><label><strong>T or G </strong> Tax / GAAP</label><input formControlName="tax_gaap"
+            type="text" class="form-control">
+        </div>
+        <div class="col-md-4"><label><strong>CPFS </strong> Personal Financial Satement</label><input
+            formControlName="cash_flows" type="text" class="form-control"></div>
+      </div>
+      <div class="card-title"><strong>R </strong> Review:</div>
+      <div class="form-row mb-4" formGroupName="review">
+        <div class="col-md-4"><label><strong>FD </strong> Full Disc </label><input formControlName="full_disc"
+            type="text" class="form-control">
+        </div>
+        <div class="col-md-4"><label><strong>ND </strong> Non Disc </label><input formControlName="non_disc" type="text"
+            class="form-control">
+        </div>
+        <div class="col-md-4"><label><strong>CF </strong> Cash Flows </label><input formControlName="RPFS" type="text"
+            class="form-control">
+        </div>
+        <div class="col-md-4"><label><strong>W </strong> WIP</label><input formControlName="WIP" type="text"
+            class="form-control"></div>
+        <div class="col-md-4"><label><strong>T or G </strong> Tax / GAAP</label><input formControlName="tax_gaap"
+            type="text" class="form-control">
+        </div>
+        <div class="col-md-4"><label><strong>CPFS </strong> Personal Financial Satement</label><input
+            formControlName="cash_flows" type="text" class="form-control"></div>
+      </div>
+      <div class="form-row mb-4">
+        <div class="col-md-6">
+          <label>Entity Type:</label>
+          <div class="">
+            <input type="radio" formControlName="entity_type" value="s_corp" class="">
+            <label class="">S Corp</label>
+          </div>
+          <div class="">
+            <input type="radio" formControlName="entity_type" value="llc" class="">
+            <label class="">LLC</label>
+          </div>
+          <div class="">
+            <input type="radio" formControlName="entity_type" value="c_corp" class="">
+            <label class="">C Corp</label>
+          </div>
+          <div class="">
+            <input type="radio" formControlName="entity_type" value="trust" class="">
+            <label class="">Trust</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label>Period for financial:</label><textarea formControlName="peiod_of_financial" cols="10" rows="2" class="form-control"></textarea>
+        </div>
+      </div>
+      <div class="card-title">Bookkeeping Information:</div>
+      <div class="form-row mb-4">
+
+        <ng-container formGroupName="book_keeping_info">
+
+          <div class="col-md-6">
+            <label>Quickbooks or Other:</label><textarea formControlName="quickbooks_others" cols="20" rows="2"
+              class="form-control"></textarea>
+          </div>
+          <div class="col-md-6">
+            <label>Passwords:</label><textarea formControlName="passwords" cols="20" rows="2"
+              class="form-control"></textarea>
+          </div>
+          <div class="col-md-6">
+            <label>Security Questions:</label><textarea formControlName="security_questions" cols="20" rows="2"
+              class="form-control"></textarea>
+          </div>
+          <div class="col-md-6">
+            <label>Full Service Bookkeping? </label><textarea formControlName="full_service_bookkeeping" cols="20"
+              rows="2" class="form-control"></textarea>
+          </div>
+        </ng-container>
+
+        <div class="col-md-6">
+          <label>Notes: </label><textarea formControlName="notes" cols="20" rows="2" class="form-control"></textarea>
+        </div>
+        <div class="col-md-6">
+          <label>Personal Notes: </label><textarea formControlName="personal_note" cols="20" rows="2"
+            class="form-control"></textarea>
+        </div>
+        <div class="col-md-6">
+          <label>Partner Acceptance:</label><textarea formControlName="partner_acceptance" cols="20" rows="2" class="form-control"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

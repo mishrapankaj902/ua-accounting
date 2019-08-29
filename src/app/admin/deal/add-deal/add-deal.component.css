@@ -1,0 +1,65 @@
+.add-deal-sec {
+    height: 450px;
+    overflow-y: scroll;
+    top: 0;
+  }
+
+  .add-deal-sec .card {
+    box-shadow: none;
+  }
+
+  .add-deal-sec .close {
+    color: #3c3c3c;
+    position: relative;
+    z-index: 999;
+    text-shadow: none;
+    opacity: 1;
+    background-color: transparent;
+    outline: none !important;
+  }
+
+  .add-deal-sec .modal-title {
+    color: #171717;
+  }
+
+  .add-deal-btm-btn {
+    border: 1px solid #efead4;
+    padding: 2px 35px;
+    line-height: 34px;
+    font-size: 18px;
+    background: #912439;
+  }
+
+  .add-deal-sec.button-text {
+    color: #fff !;
+  }
+
+  .add-deal-header {
+    background: #efead4;
+    border-radius: 4px 0 0 0;
+    border-color: #d8d8d8;
+  }
+
+  .our-badge {
+    background: #912436;
+    width: 100%;
+    padding: 10px 0;
+    color: #fff;
+    border-color: #e61639;
+    margin: 0 0 10px;
+  }
+
+  .deal-card-body {
+    padding: 0px;
+  }
+
+  .our-badge a {
+    color: #ffd20b;
+  }
+
+  .exp-sec {
+    color: #912436;
+    font-size: 13px;
+    padding: 5px 0 0;
+    display: inline-block;
+  }

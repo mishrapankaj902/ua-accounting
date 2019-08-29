@@ -1,0 +1,23 @@
+<div class="row">
+  <img class="img-fluid" src="assets/images/logo-4.png" alt="">
+</div>
+<div class="card" *ngIf="render">
+  <div class="card-body mt-5">
+    <div class="form-row">
+      <div class="col-sm-12" *ngIf="isUpdate">{{model.file_name}} 
+        <button mat-icon-button (click)="deleteFile(model)"><i class="fa fa-trash text-danger" aria-hidden="true"></i></button>
+        <button mat-icon-button (click)="downloadFile(model)"><i class="fa fa-download text-primary" aria-hidden="true"></i></button>
+      </div>
+      <div class="col-md-12" *ngIf="!isUpdate">
+        <div class="form-group">
+          <label> Upload File:</label>
+          <input #file class="form-control" type="file" />
+        </div>
+        <div class="progress" *ngIf="width !== '0%'">
+          <div class="progress-bar bg-success" role="progressbar" [style.width]="width" aria-valuemin="0"
+            aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

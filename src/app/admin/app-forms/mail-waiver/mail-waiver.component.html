@@ -1,0 +1,54 @@
+<form [formGroup]="form" *ngIf="render">
+  <div class="row">
+    <img class="img-fluid" src="assets/images/logo-4.png" alt="">
+  </div>
+  <div class="card">
+    <div class="card-body text-justified">
+      <p class="card-text">
+        I hereby acknowledge that I will mail a signed copy of my tax return to the Internal Revenue Service for
+        submission.
+      </p>
+      <p class="card-text">
+        I understand that failure to do so by the specified due date may result in monetary penalties issued by the
+        Internal Revenue Service. I also understand that there are multiple addresses used by the Internal Revenue
+        Service
+        and it is my responsibility to submit it to the proper address.
+      </p>
+      <p class="card-text">
+        By signing this agreement, I waive any claims of liability towards Unique Accounting for the submission of my
+        tax
+        return.
+      </p>
+    </div>
+    <div class="card-body mt-2">
+      <div class="form-row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label> Print Name</label>
+            <input formControlName="print_name" class="form-control" type="text" placeholder="Print Name">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label> Date</label>
+            <input formControlName="date" class="form-control" type="date">
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label> Signature</label>
+            <input formControlName="year" class="form-control" type="text" placeholder="Signature">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label> Tax Year</label>
+            <input formControlName="signature" class="form-control" type="text" placeholder="Tax Year">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

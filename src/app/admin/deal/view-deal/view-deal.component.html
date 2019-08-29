@@ -1,0 +1,80 @@
+<div class="modal-header add-deal-header p-1 pl-4">
+  <h4 class="modal-title">View Deal</h4>
+  <button type="button" class="close p-0 m-0" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form class="add-deal-sec">
+      <div *ngIf="!authService.authenticated; then alertMsg"></div>
+      <ng-template #alertMsg>
+        <div>
+          <span class="badge badge-success our-badge">You are not connected with Outlook Calendar! <a
+              href="javascript:void(0)" >Click Here</a> to connect.</span>
+        </div>
+      </ng-template>
+    <div class="card">
+      <div class="card-body deal-card-body">
+        <div class="form-group">
+          <label>Contact Person Name <span style="color:red;">*</span></label>
+          <input value="{{(item | async)?.contact_person_name}}" type="text" class="form-control" readonly />
+          
+        </div>
+        <div class="form-group">
+          <label>Email Address<span style="color:red;">*</span></label>
+          <input value="{{(item | async)?.email}}" type="text" class="form-control" readonly/>
+         
+        </div>
+        <div class="form-group">
+          <label>Phone Number<span style="color:red;">*</span></label>
+          <input value="{{(item | async)?.phone}}" type="text" class="form-control" readonly/>
+          
+        </div>
+        <div class="form-group">
+          <label>What they are looking for</label>
+          <textarea value="{{(item | async)?.query}}" cols="10" rows="2" class="form-control" readonly></textarea>
+        </div>
+        <div class="form-group">
+          <label>Company Name</label>
+          <input type="text" value="{{(item | async)?.company_name}}" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+          <label>List of sales Representative</label>
+          <select class="form-control" readonly >
+            <option value="{{(item | async)?.representative}}">{{(item | async)?.representative}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Deal Type</label>
+          <select class="form-control" readonly>
+            <option value="{{(item | async)?.type}}">{{(item | async)?.type}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Deal Name <span style="color:red;">*</span></label>
+          <input type="text" value="{{(item | async)?.deal_name}}" class="form-control" readonly/>
+          
+        </div>
+        <div class="form-group">
+            <label>Deal Size <span style="color:red;">*</span></label>
+            <input type="text" value="{{(item | async)?.deal_size}}" class="form-control" readonly />
+         
+          </div>
+        <div class="form-group">
+          <label>Deal Description <span style="color:red;">*</span></label>
+          <textarea value="{{(item | async)?.deal_desc}}" class="form-control" readonly></textarea>
+        </div>
+        <div class="form-group">
+          <label>Meeting Start Time</label>
+          <input type="text" value="{{(item | async)?.start_date.toDate().toDateString()}}" class="form-control" readonly/>         
+        </div>
+        <div class="form-group">
+          <label>Meeting Length</label>
+          <select class="form-control" readonly >
+            <option value="{{(item | async)?.meeting_length}}">{{(item | async)?.meeting_length}} Min</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

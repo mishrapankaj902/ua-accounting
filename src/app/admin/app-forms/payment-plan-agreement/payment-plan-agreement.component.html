@@ -1,0 +1,264 @@
+<div class="container-fluid pt-5 pb-5">
+  <form [formGroup]="form" *ngIf="render">
+    <div class="card mb-2">
+      <div class="card-body">
+        <h4 class="card-title text-center mb-5">Agreement Payment Plan with Unique Accounting LLC</h4>
+        <div class="form-row mb-5">
+          <div class="col-md-6">
+            <div class="form-group row mb-1">
+              <label for="dod" class="col-sm-3 col-form-label">Client: </label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="client" class="form-control" id="client">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row mb-1">
+              <label for="business" class="col-sm-3 col-form-label">Business: </label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="business" class="form-control" id="business">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6">
+            <div class="form-group row mb-1">
+              <label for="payment_aggrement" class="col-sm-6 col-form-label">REF: PAYMENT AGREEMENT BETWEEN</label>
+              <div class="col-sm-6">
+                <input type="text" formControlName="payment_aggrement" class="form-control" id="payment_aggrement">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row mb-1">
+              <label for="total_amount" class="col-sm-6 col-form-label">I/We agree to pay the total amount of $</label>
+              <div class="col-sm-6">
+                <input type="number" formControlName="total_amount" class="form-control" id="total_amount">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row mb-1">
+              <label for="follows" class="col-sm-3 col-form-label"> as follows:</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="follows" class="form-control" id="follows">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row mb-1">
+              <label for="on" class="col-sm-1 col-form-label">on</label>
+              <div class="col-sm-11">
+                <input type="date" formControlName="on" class="form-control" id="on">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row mb-1">
+              <label for="and_$" class="col-sm-2 col-form-label">and $</label>
+              <div class="col-sm-10">
+                <input type="text" formControlName="and_$" class="form-control" id="and_$">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row mb-1">
+              <label for="on_the" class="col-sm-2 col-form-label">on the</label>
+              <div class="col-sm-10">
+                <input type="text" formControlName="on_the" class="form-control" id="on_the">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row mb-1">
+              <label for="on_the" class="col-sm-7 col-form-label">of each month until the amount is payed in
+                full.</label>
+              <div class="col-sm-5">
+                <input type="text" formControlName="on_the" class="form-control" id="on_the">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title text-center">Payment Type</h4>
+
+        <div class="form-row">
+          <div class="col-sm-12">
+            <div class="form-group row mb-1">
+              <div class="col-sm-4">
+                <input type="text" formControlName="payment_cash" class="form-control" id="payment_cash">
+              </div>
+              <label for="payment_cash" class="col-sm-8 col-form-label">Payments will be made by cash or check received
+                by date above.</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-sm-12">
+            <div class="form-group row mb-1">
+              <div class="col-sm-4">
+                <input type="text" formControlName="payment_card" class="form-control" id="payment_card">
+              </div>
+              <label for="payment_card" class="col-sm-8 col-form-label">Payments will be made by credit card, which I
+                authorize you to charge on date above</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-sm-12">
+            <div class="form-group row mb-1">
+              <label for="account_type" class="col-sm-2 col-form-label">Account Type:</label>
+              <div class="col-sm-10">
+                <div class="form-row">
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="radio1" formControlName="account_type" class="custom-control-input">
+                    <label for="radio1" class="custom-control-label"> Visa</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="radio2" formControlName="account_type" class="custom-control-input">
+                    <label for="radio2" class="custom-control-label"> MasterCard</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="radio3" formControlName="account_type" class="custom-control-input">
+                    <label for="radio3" class="custom-control-label"> AMEX</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="radio4" formControlName="account_type" class="custom-control-input">
+                    <label for="radio4" class="custom-control-label"> Discover</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-sm-6">
+            <div class="form-group row mb-1">
+              <label for="cardholder_name" class="col-sm-4 col-form-label">Cardholder Name : </label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="cardholder_name" class="form-control" id="cardholder_name">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row mb-1">
+              <label for="account_number" class="col-sm-4 col-form-label">Account Number : </label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="account_number" class="form-control" id="account_number">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-sm-4">
+            <div class="form-group row mb-1">
+              <label for="expiration_date" class="col-sm-4 col-form-label">Expiration Date: </label>
+              <div class="col-sm-8">
+                <input type="date" formControlName="expiration_date" class="form-control" id="expiration_date">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-8">
+            <div class="form-group row mb-1">
+              <label for="cvv" class="col-sm-8 col-form-label">CVV2 (3 digit number on back of Visa/MC, 4 digits on
+                front of AMEX): </label>
+              <div class="col-sm-4">
+                <input type="text" formControlName="cvv" class="form-control" id="cvv">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-sm-6">
+            <div class="form-group row mb-1">
+              <label for="billing_address" class="col-sm-4 col-form-label">Billing Address: </label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="billing_address" class="form-control" id="billing_address">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row mb-1">
+              <label for="phone" class="col-sm-4 col-form-label">Phone#:</label>
+              <div class="col-sm-8">
+                <input type="number" formControlName="phone" class="form-control" id="phone">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-sm-6">
+            <div class="form-group row mb-1">
+              <label for="city_state_zip" class="col-sm-4 col-form-label">City, State, Zip: </label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="city_state_zip" class="form-control" id="city_state_zip">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row mb-1">
+              <label for="email" class="col-sm-4 col-form-label">Email:</label>
+              <div class="col-sm-8">
+                <input type="email" formControlName="email" class="form-control" id="email">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-sm-12">
+            <div class="form-group mb-1">
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="cc_attach" formControlName="customRadioInline1" class="custom-control-input">
+                <label class="custom-control-label" for="cc_attach">Front/Back of CC attached</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h6 class="text-center mt-2">It is understood that if the client misses payments, without prior notification and
+          agreement, Unique
+          Accounting LLC reserves the right to transfer collections to a collection agency.</h6>
+        <div class="form-row">
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group mb-1">
+                  <label for="name_of_client">Name of Client: </label>
+                  <input type="text" formControlName="name_of_client" class="form-control" id="name_of_client">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group mb-1">
+                  <label for="name_of_client_date">Date</label>
+                  <input type="date" formControlName="name_of_client_date" class="form-control"
+                    id="name_of_client_date">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group mb-1">
+                  <label for="manager">Manager: </label>
+                  <input type="text" formControlName="manager" class="form-control" id="manager">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group mb-1">
+                  <label for="manager_date">Date</label>
+                  <input type="date" formControlName="manager_date" class="form-control" id="manager_date">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>

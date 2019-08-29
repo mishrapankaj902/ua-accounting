@@ -1,0 +1,287 @@
+<ng-container *ngIf="render">
+    <div class="container-fluid pt-5 pb-5">
+      <form [formGroup]="form">
+        <div class="form-row">
+          <div class="col-md-6">
+            <div class="form-group row mb-1">
+              <label for="start_date" class="col-sm-4 col-form-label">Start Date</label>
+              <div class="col-sm-8">
+                <input type="date" formControlName="start_date" class="form-control" id="start_date">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="due_date" class="col-sm-4 col-form-label">Due Date</label>
+              <div class="col-sm-8">
+                <input type="date" formControlName="due_date" class="form-control" id="due_date">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="location" class="col-sm-4 col-form-label">Location</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="location" class="form-control" id="location">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="partner" class="col-sm-4 col-form-label">Partner</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="partner" class="form-control" id="partner">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="manager" class="col-sm-4 col-form-label">Manager</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="manager" class="form-control" id="manager">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="assign_to" class="col-sm-4 col-form-label">Assign To</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="assign_to" class="form-control" id="assign_to">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row pl-5">
+              <label for="federal" class="col-sm-2 col-form-label">Federal</label>
+              <div class="col-sm-4">
+                <input type="text" formControlName="federal" class="form-control" id="federal">
+              </div>
+              <label for="state" class="col-sm-2 col-form-label">State</label>
+              <div class="col-sm-4">
+                <input type="text" formControlName="state" class="form-control" id="state">
+              </div>
+            </div>
+            <div class="form-group row pl-5">
+              <div class="col-sm-8">
+                <div class="custom-control custom-switch">
+                  <input formControlName="returning_client" type="checkbox" class="custom-control-input"
+                    id="customSwitch1">
+                  <label class="custom-control-label" for="customSwitch1">Returning client?</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <h2 class="text-center w-100">Tax Planning</h2>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6">
+            <div class="form-group row mb-1">
+              <label for="name" class="col-sm-4 col-form-label">Name</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="name" class="form-control" id="name">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="birthday" class="col-sm-4 col-form-label">Birthday</label>
+              <div class="col-sm-8">
+                <input type="date" formControlName="birthday" class="form-control" id="birthday">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="dod" class="col-sm-4 col-form-label">DOD</label>
+              <div class="col-sm-8">
+                <input type="date" formControlName="dod" class="form-control" id="dod">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="occupation" class="col-sm-4 col-form-label">Occupation</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="occupation" class="form-control" id="occupation">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="ss" class="col-sm-4 col-form-label">SS</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="ss" class="form-control" id="ss">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="phone" class="col-sm-4 col-form-label">Phone</label>
+              <div class="col-sm-8">
+                <input type="number" formControlName="phone" class="form-control" id="phone">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="email" class="col-sm-4 col-form-label">Email</label>
+              <div class="col-sm-8">
+                <input type="email" formControlName="email" class="form-control" id="email">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group row mb-1">
+              <label for="spouse_name" class="col-sm-4 col-form-label">Spouse Name (MFS MFJ)</label>
+              <div class="col-sm-8">
+                <input type="email" formControlName="spouse_name" class="form-control" id="spouse_name">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="birthday" class="col-sm-4 col-form-label">Birthday</label>
+              <div class="col-sm-8">
+                <input type="date" formControlName="spouse_birthday" class="form-control" id="birthday">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="dod" class="col-sm-4 col-form-label">DOD</label>
+              <div class="col-sm-8">
+                <input type="date" formControlName="spouse_dod" class="form-control" id="dod">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="occupation" class="col-sm-4 col-form-label">Occupation</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="spouse_occupation" class="form-control" id="occupation">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="ss" class="col-sm-4 col-form-label">SS</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="spouse_ss" class="form-control" id="ss">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="address" class="col-sm-4 col-form-label">Address</label>
+              <div class="col-sm-8">
+                <textarea class="form-control" formControlName="spouse_address" id="address"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-sm-6">
+            <h4 class="bg-light text-center text-dark w-100 mt-2">Individual</h4>
+            <div class="form-group row mb-1">
+              <label for="dependents" class="col-sm-4 col-form-label">Dependents</label>
+              <div class="col-sm-8">
+                <div class="input-group" [formGroupName]="'dependents'">
+                  <input type="text" formControlName="saly" class="form-control" id="dependents1" placeholder="SALY">
+                  <input type="text" formControlName="number" class="form-control" id="dependents2" placeholder="#">
+                  <input type="text" formControlName="over" class="form-control" id="dependents3"
+                    placeholder="Over 17:#">
+                </div>
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="dependents" class="col-sm-4 col-form-label">Standard or Itemized Deductions</label>
+              <div class="col-sm-8">
+                <div class="input-group">
+                  <textarea class="form-control" formControlName="deductions"
+                    placeholder="Notes for Itemized"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="health_insurance" class="col-sm-4 col-form-label">Health Insurance</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="health_insurance" class="form-control" id="health_ensurence">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="dependents" class="col-sm-4 col-form-label">Wages:(Pay Stub)</label>
+              <div class="col-sm-8">
+                <div class="input-group" [formGroupName]="'wages'">
+                  <input type="text" formControlName="name" class="form-control" id="dependents1" placeholder="Name">
+                  <input type="text" formControlName="amount" class="form-control" id="dependents2"
+                    placeholder="Amount">
+                  <input type="text" formControlName="with_held" class="form-control" id="dependents3"
+                    placeholder="Withheld">
+                </div>
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="div_interest" class="col-sm-4 col-form-label">Div Interest</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="div_interest" class="form-control" id="div_interest">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="carryover_or_nol" class="col-sm-4 col-form-label">Carryover or NOL</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="nol" class="form-control" id="carryover_or_nol">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="stock_sales" class="col-sm-4 col-form-label">Stock sales</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="stock_sales" class="form-control" id="stock_sales">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="other" class="col-sm-4 col-form-label">Other</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="other" class="form-control" id="other">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="other_income" class="col-sm-4 col-form-label">Rentals/Other Income:</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="other_income" class="form-control" id="rentals">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <h4 class="bg-light text-center text-dark w-100 mt-2">Business (Schedule K-1s and Schedule C):</h4>
+            <ng-container [formGroupName]="'QBI'">
+              <div class="form-group mb-1">
+                <label for="spouse_name" class="w-100"><span class="float-left">1</span><span
+                    class="float-right mr-5">QBI?</span></label>
+                <textarea class="form-control" formControlName="0"></textarea>
+              </div>
+              <div class="form-group mb-1">
+                <label for="spouse_name" class="w-100"><span class="float-left">2</span><span
+                    class="float-right mr-5">QBI?</span></label>
+                <textarea class="form-control" formControlName="1"></textarea>
+              </div>
+              <div class="form-group mb-1">
+                <label for="spouse_name" class="w-100"><span class="float-left">3</span><span
+                    class="float-right mr-5">QBI?</span></label>
+                <textarea class="form-control" formControlName="2"></textarea>
+              </div>
+            </ng-container>
+            <div class="form-group row mb-1">
+              <label for="retirement_plan" class="col-sm-4 col-form-label">Retirement Plan</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="retirement_plan" class="form-control" id="retirement_plan">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="election_needed" class="col-sm-4 col-form-label">S Election Needed</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="election_needed" class="form-control" id="s_election_needed">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="payroll_needed" class="col-sm-4 col-form-label">Payroll needed</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="payroll_needed" class="form-control" id="payroll_needed">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group w-100 mb-1">
+            <label for="other_notes" class="w-100">Other Notes</label>
+            <textarea class="form-control" formControlName="other_notes" id="other_notes"></textarea>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6">
+            <div class="form-group row mb-1">
+              <label for="partner_acceptance" class="col-sm-4 col-form-label">Partner Acceptance</label>
+              <div class="col-sm-8">
+                <input type="text" formControlName="partner_acceptance" class="form-control" id="partner_acceptence">
+              </div>
+            </div>
+            <div class="form-group row mb-1">
+              <label for="date" class="col-sm-4 col-form-label">Date</label>
+              <div class="col-sm-8">
+                <input type="date" formControlName="date" class="form-control" id="date">
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+</ng-container>

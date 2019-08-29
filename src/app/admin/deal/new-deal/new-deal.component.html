@@ -1,0 +1,199 @@
+<style>
+  .mat-checkbox {
+    line-height: 2.5;
+  }
+</style>
+
+<div class="modal-header">
+  <div class="d-flex flex-row w-100">
+    <div class="flex-grow-1">
+      <h2 class="modal-title">Unique Accounting Client Management</h2>
+    </div>
+    <div *hasPermission="'isAdmin'">
+      <select class="form-control" [(ngModel)]="basicInfoModel.pipe_line" (change)="updateBasicInfo()">
+        <option *ngFor="let item of pipe_line_options" [value]="item.id">{{item.name}}</option>
+      </select>
+    </div>
+  </div>
+
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="list-group">
+        <ng-container *hasPermission="'basic_info'">
+          <button class="list-group-item list-group-item-action" [ngClass]="{'active':tab=='basic-info'}"
+            (click)="tabClick('basic-info')"><strong>1. Basic Information</strong>
+          </button>
+        </ng-container>
+        <ng-container *hasPermission="'choose_form'">
+          <button [ngClass]="{'active':tab=='on_borading'}" (click)="tabClick('on_borading')"
+            class="list-group-item list-group-item-action">
+            <strong>2. Choose Forms</strong>
+          </button>
+        </ng-container>
+        <ng-container *ngFor="let item of basicInfoModel.fillable_forms">
+          <button class="list-group-item list-group-item-action" [ngClass]="{'active':tab==item.key}"
+            (click)="tabClick(item.key)">{{ item.name }}</button>
+        </ng-container>
+        <ng-container>
+          <button class="list-group-item list-group-item-action" [ngClass]="{'active':tab=='ua-services'}"
+            (click)="tabClick('ua-services')">
+            <strong>3. Choose Services</strong>
+          </button>
+        </ng-container>
+        <ng-container>
+          <button class="list-group-item list-group-item-action" (click)="onExportPdf()">
+            <strong>4. Create Engagement Letter</strong>
+          </button>
+        </ng-container>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="table-responsive" *ngIf="tab === 'on_borading'" style="margin-left:15px;">
+        <h5 style="margin-bottom: 45px;">Please choose the forms that this client will need to provide.</h5>
+        <table class="table table-light">
+          <!-- <thead class="thead-light">
+            <tr>
+              <th class="text-center">Form</th>
+              <th class="text-center">Cost</th>
+              <th class="text-center">Quantity</th>
+              <th class="text-center">Amount</th>
+            </tr>
+          </thead> -->
+          <tbody>
+            <tr *ngFor="let form of forms">
+              <td *ngIf="form.enable">
+                <mat-checkbox [value]="form.key" (change)="changeItem($event,form)" [checked]="isSelected(form)">
+                  {{form.name}}</mat-checkbox>
+              </td>
+              <!-- <td><input class="form-control" type="number" [(ngModel)]="form.cost"></td>
+              <td><input class="form-control" type="number" [(ngModel)]="form.qty"></td>
+              <td class="text-center"><b>{{(form.cost * form.qty).toFixed(2)}} $</b></td> -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-responsive" *ngIf="tab === 'ua-services'" style="margin-left:15px;">
+        <h5 style="margin-bottom: 45px;">Please choose the services that this client will need to provide.</h5>
+        <table class="table table-light">
+          <thead class="thead-light">
+            <tr>
+              <th>Service</th>
+              <th class="text-center">Cost</th>
+              <th class="text-center">Frequency</th>
+              <th class="text-center">Quantity</th>
+              <th class="text-center">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let service of services">
+              <td>
+                <mat-checkbox [value]="service.key" (change)="changeItemService($event,service)"
+                  [checked]="isSelectedService(service)">
+                  {{service.name}}</mat-checkbox>
+              </td>
+              <td class="text-center">$<input class="service-control" type="number" [(ngModel)]="service.cost"></td>
+              <td class="text-center">
+                <select class="service-control" [(ngModel)]="service.frequency">
+                  <option value="monthly" selected>Monthly</option>
+                  <option value="quarterly">Quarterly</option>
+                  <option value="annually">Annually</option>
+                </select>
+              </td>
+              <td class="text-center"><input class="service-control" type="number" [(ngModel)]="service.qty"></td>
+              <td class="text-center"><b>${{(service.cost * service.qty).toFixed(2)}}</b></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <div *ngIf="tab === 'basic-info'">
+        <app-basic-info [deal]="basicInfoModel" [$tabRef]="$tabDetector"></app-basic-info>
+      </div>
+      <div *ngIf="tab==='bank_verification'">
+        <bank-verification [deal]="basicInfoModel" [$tabRef]="$tabDetector"></bank-verification>
+      </div>
+      <div *ngIf="tab==='bookkeeping_intake'">
+        <book-keeping [deal]="basicInfoModel" [$tabRef]="$tabDetector"></book-keeping>
+      </div>
+      <div *ngIf="tab==='business_tax_intake'">
+        <app-business-taxes-intake [deal]="basicInfoModel" [$tabRef]="$tabDetector"></app-business-taxes-intake>
+      </div>
+      <div *ngIf="tab==='css_request'">
+        <css-request [deal]="basicInfoModel" [$tabRef]="$tabDetector"></css-request>
+      </div>
+      <div *ngIf="tab==='financial_statement'">
+        <app-financial-statement-intake [deal]="basicInfoModel" [$tabRef]="$tabDetector">
+        </app-financial-statement-intake>
+      </div>
+      <div *ngIf="tab==='letter_head_template'">
+        <app-letter-head-template [deal]="basicInfoModel" [$tabRef]="$tabDetector"></app-letter-head-template>
+      </div>
+      <div *ngIf="tab==='mail_waiver'">
+        <app-mail-waiver [deal]="basicInfoModel" [$tabRef]="$tabDetector"></app-mail-waiver>
+      </div>
+      <div *ngIf="tab==='payment_plan'">
+        <app-payment-plan-agreement [deal]="basicInfoModel" [$tabRef]="$tabDetector"></app-payment-plan-agreement>
+      </div>
+      <div *ngIf="tab==='personal_tax_intake'">
+        <app-personal-taxes-intake [deal]="basicInfoModel" [$tabRef]="$tabDetector"></app-personal-taxes-intake>
+      </div>
+      <div *ngIf="tab==='receipt_template'">
+        <app-receipt-template [deal]="basicInfoModel" [$tabRef]="$tabDetector"></app-receipt-template>
+      </div>
+      <div *ngIf="tab==='secretary_of_state'">
+        <app-secretary-of-state-packet [deal]="basicInfoModel" [$tabRef]="$tabDetector"></app-secretary-of-state-packet>
+      </div>
+      <div *ngIf="tab==='tax_planning_intake'">
+        <app-tax-planning-intake [deal]="basicInfoModel" [$tabRef]="$tabDetector"></app-tax-planning-intake>
+      </div>
+      <div *ngIf="tab==='app-sch-form'">
+        <app-sch-form [deal]="basicInfoModel" [$tabRef]="$tabDetector"></app-sch-form>
+      </div>
+      <div *ngIf="tab==='app-book-keeping-form'">
+        <app-book-keeping-form [deal]="basicInfoModel" [$tabRef]="$tabDetector"></app-book-keeping-form>
+      </div>
+
+      <div *ngIf="tab==='financial-form'">
+        <app-financial-form [deal]="basicInfoModel" [$tabRef]="$tabDetector"></app-financial-form>
+      </div>
+      <div *ngIf="tab==='app-revised-business-form'">
+        <app-revised-business-form [deal]="basicInfoModel" [$tabRef]="$tabDetector"></app-revised-business-form>
+      </div>
+      <div *ngIf="tab==='app-revised-client-notes'">
+        <app-revised-client-notes [deal]="basicInfoModel" [$tabRef]="$tabDetector"></app-revised-client-notes>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="submit()">Save</button>
+    <button type="button" *hasPermission="'isAdmin'" class="btn btn-outline-dark"
+      (click)="addClientInSystem(content)">Add Client to System</button>
+  </div>
+
+  <ng-template #content let-modal>
+    <div class="modal-body">
+      <h5 class="modal-title pb-3">{{ title }}</h5>
+      <table class="table table-light">
+        <tbody>
+          <tr>
+            <th>Username</th>
+            <td>{{ user.username }}</td>
+          </tr>
+          <tr>
+            <th>Password</th>
+            <td>{{ user.password }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>

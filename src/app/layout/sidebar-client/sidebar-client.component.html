@@ -1,0 +1,313 @@
+<div id="left-sidebar" class="sidebar" *ngIf="sidebarVisible" style="overflow-y:scroll;">
+    <div class="sidebar-scroll">
+        <div class="side-rpt-bx pd-top">
+            <div class="head-top">
+                <h4>Details</h4>
+                <ul class="head-link">
+                    <!-- <li>
+                          <a href="javascript:void(0);"><i class="fa fa-pencil"></i></a>
+                        </li> -->
+                    <li>
+                        <a href="javascript:void(0);" (click)="clickEvent()">
+                            <div class="up-dwn-aw">
+                                <i class="fa fa-angle-up"></i>
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+
+                        </a>
+                    </li>
+                    <!-- <li>
+                          <a class="font-weight-bold" href="javascript:void(0);">Customize field </a>
+                        </li> -->
+                </ul>
+            </div>
+            <div class="head-content" [ngClass]="tglaccord ? 'hidebtm' : 'showbtm'">
+                <div class="dl-horizontal">
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Won time
+                        </label>
+                        <h4 class="col-sm-7">
+                            N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Keyword Ideas
+                        </label>
+                        <h4 class="col-sm-7">
+                            N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Credit Card Number
+                        </label>
+                        <h4 class="col-sm-7">
+                            N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Exp Date
+                        </label>
+                        <h4 class="col-sm-7">
+                            N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            CV2 Code
+                        </label>
+                        <h4 class="col-sm-7">
+                            N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Billing Date
+                        </label>
+                        <h4 class="col-sm-7">
+                            N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Start Date
+                        </label>
+                        <h4 class="col-sm-7">
+                            {{created_at}}
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Tag
+                        </label>
+                        <h4 class="col-sm-7">
+                            N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Billing Name
+                        </label>
+                        <h4 class="col-sm-7">
+                            {{deal.deal_name}}
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Lead Source
+                        </label>
+                        <h4 class="col-sm-7">
+                            N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Email Compaign ID
+                        </label>
+                        <h4 class="col-sm-7">
+                            N/A
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="side-rpt-bx pd-top">
+            <div class="head-top">
+                <h4>Person</h4>
+                <ul class="head-link">
+                    <!-- <li>
+                          <a href="javascript:void(0);"><i class="fa fa-pencil"></i></a>
+                        </li> -->
+                    <li>
+                        <a href="javascript:void(0);" (click)="prsnclickEvent()">
+                            <div class="up-dwn-aw">
+                                <i class="fa fa-angle-up"></i>
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+
+                        </a>
+                    </li>
+                    <!-- <li>
+                          <a class="font-weight-bold" href="javascript:void(0);"><i class="fa fa-cog"></i> </a>
+                        </li> -->
+                </ul>
+            </div>
+            <div class="head-content" [ngClass]="ptglaccord ? 'prsnhidebtm' : 'prsnshowbtm'">
+                <div class="dl-horizontal">
+                    <div class="row align-items-center">
+                        <label class="col-sm-5 text-right">
+                            <div class="prsn-avt">
+                                <!-- <img src="img/team5.jpg" /> -->
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </label>
+                        <h4 class="col-sm-7">
+                            {{deal.contact_person_name}}
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Label
+                        </label>
+                        <h4 class="col-sm-7"> N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Phone
+                        </label>
+                        <h4 class="col-sm-7">
+                            {{deal.phone}}
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Email
+                        </label>
+                        <h4 class="col-sm-7">
+                            {{deal.email}}
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Website
+                        </label>
+                        <h4 class="col-sm-7"> N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Notes
+                        </label>
+                        <h4 class="col-sm-7"> N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Customer Comments
+                        </label>
+                        <h4 class="col-sm-7"> N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Tag
+                        </label>
+                        <h4 class="col-sm-7">N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Source
+                        </label>
+                        <h4 class="col-sm-7">N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Instant messanger
+                        </label>
+                        <h4 class="col-sm-7">N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Postal address
+                        </label>
+                        <h4 class="col-sm-7">{{deal.address}}
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="side-rpt-bx pd-top">
+            <div class="head-top" (click)="orgclickEvent()">
+                <h4>Organization</h4>
+                <ul class="head-link">
+                    <!-- <li>
+                          <a href="javascript:void(0);"><i class="fa fa-pencil"></i></a>
+                        </li> -->
+                    <li>
+                        <a ref="javascript:void(0);">
+                            <div class="up-dwn-aw">
+                                <i class="fa fa-angle-up"></i>
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+
+                        </a>
+                    </li>
+                    <!-- <li>
+                          <a class="font-weight-bold" href="javascript:void(0);"><i class="fa fa-cog"></i> </a>
+                        </li> -->
+                </ul>
+            </div>
+            <div class="head-content" [ngClass]="otglaccord ? 'orghidebtm' : 'orgshowbtm'">
+                <div class="dl-horizontal">
+                    <div class="row align-items-center">
+                        <label class="col-sm-5 text-right">
+                            <div class="prsn-avt">
+                                <!-- <img src="img/team5.jpg" /> -->
+                                <i class="fa fa-building"></i>
+                            </div>
+                        </label>
+                        <h4 class="col-sm-7">
+                            {{deal.compamny_name}}
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Label
+                        </label>
+                        <h4 class="col-sm-7">N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Website address
+                        </label>
+                        <h4 class="col-sm-7">N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Industry
+                        </label>
+                        <h4 class="col-sm-7">N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Target Market
+                        </label>
+                        <h4 class="col-sm-7">N/A
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Address
+                        </label>
+                        <h4 class="col-sm-7">
+                            {{deal.address}}
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-5">
+                            Monthly Adwords Spend
+                        </label>
+                        <h4 class="col-sm-7">N/A
+                        </h4>
+                    </div>
+
+                    <div class="smrt-cnt-gd">
+                        <span>Smart contact data info <i>Gold</i></span>
+                        <a class="text-primary" href="javascript:void(0);">Show more</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

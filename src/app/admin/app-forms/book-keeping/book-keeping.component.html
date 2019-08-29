@@ -1,0 +1,322 @@
+<form [formGroup]="form" class="p-3" *ngIf="render">
+  <div class="card mb-3">
+    <div class="card-header">
+      <h5>Bookkeeping Intake/Quote</h5>
+    </div>
+    <div class="card-body row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Start Date</label>
+          <input class="form-control" type="date" formControlName="start_date">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Partner</label>
+          <input class="form-control" type="text" placeholder="Partner" maxlength="35" formControlName="partner">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Manager</label>
+          <input class="form-control" maxlength="35" type="text" placeholder="Manager" formControlName="manager">
+        </div>
+      </div>
+      <div class="col-md-4 align-self-center">
+        <div class="form-check">
+          <label>Return Client:</label>
+          <label class="form-check-label p-3">
+            <input type="radio" formControlName="return_client" value="YES"  />YES
+            <input type="radio" formControlName="return_client" value="NO" checked/>NO
+          </label>
+        </div>
+      </div>
+      <div class="col-md-4 align-self-center">
+        <label class="p-r-5">Type:</label>
+        <label class="form-check-label p-3">
+          <input type="radio" value="Project" formControlName="type" checked />Project
+          <input type="radio" value="Quote" formControlName="type" />Quote
+        </label>
+      </div>
+      <ng-container formGroupName="project">
+        <div class="col-md-4 align-self-center">
+          <div class="form-check">
+            <label class="form-check-label p-3">
+              <input type="radio" value="Monthly" formControlName="duration" checked />Monthly
+              <input type="radio" value="Quarterly" formControlName="duration" />Quarterly
+              <input type="radio" value="Yearly" formControlName="duration" />Yearly
+            </label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Amount</label>
+            <input class="form-control" maxlength="10" type="text" formControlName="amount">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Due Date</label>
+            <input class="form-control" type="date" formControlName="due_date">
+          </div>
+        </div>
+      </ng-container>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Sales/Use Tax</label>
+          <input class="form-control" maxlength="20" type="text">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Periods</label>
+          <input class="form-control" maxlength="10" type="text">
+        </div>
+      </div>
+      <ng-container formGroupName="quote">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Won Date</label>
+            <input class="form-control" type="date" formControlName="won_date">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Lost Date</label>
+            <input class="form-control" type="date" formControlName="lost_date">
+          </div>
+        </div>
+      </ng-container>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Deposit Requested</label>
+          <input class="form-control" type="text" maxlength="10" formControlName="deposit_requested">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Deposit Made</label>
+          <input class="form-control" type="text" maxlength="10" formControlName="deposit_made">
+        </div>
+      </div>
+      <div class="col-md-4">
+        Deposit Required
+        <input type="checkbox" name="checkbox" formControlName="deposit_required">
+        (No project until deposit is made)
+      </div>
+    </div>
+  </div>
+
+  <ng-container formGroupName="business_info">
+    <div class="card mb-4">
+      <div class="card-header">
+        <h5>Business information</h5>
+      </div>
+      <div class="card-body row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Business Name: <span style="color:red;">*</span> </label>
+            <input class="form-control" type="text" maxlength="35" formControlName="business_info">
+            <small *ngIf="form.controls.business_info.controls.business_info.touched && form.controls.business_info.controls.business_info.invalid" class="text text-danger">This field is required.</small>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Owner: </label>
+            <input class="form-control" type="text" formControlName="owner" maxlength="15" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Main Contact : </label>
+            <input class="form-control" type="text" maxlength="15" formControlName="main_contact" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Contact info(if diff) : </label>
+            <input class="form-control" type="text" formControlName="contact_info" maxlength="15" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>EIN: </label>
+            <input class="form-control" type="text" formControlName="ein" maxlength="9" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Phone: </label>
+            <input class="form-control" type="text" formControlName="phone" maxlength="15" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Email: </label>
+            <input class="form-control" type="email" maxlength="35" formControlName="email">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Address : </label>
+            <input class="form-control" type="text" maxlength="80" formControlName="address">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Engagement letter Sent : </label>
+            <input class="form-control" type="text" maxlength="35" formControlName="letter_sent_date">
+            (Date) (Must be sent prior to project)
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Include with F/S letter </label>&nbsp;&nbsp;
+            <input type="checkbox" name="checkbox" formControlName="include_fs_letter">
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <div class="card mb-4">
+    <div class="card-header">
+      <h5>Bookkeeping Details or Quote Section</h5>
+    </div>
+    <div class="card-body row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Staff responsible for Quote : </label>
+          <input class="form-control" type="text" placeholder="Staff responsible for Quote"
+            formControlName="staff_responsible_for_quote" maxlength="35">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Industry : </label>
+          <input class="form-control" type="text" placeholder="Industry" formControlName="industry" maxlength="35">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Software : </label>
+          <div class="form-row">
+            <input class="col form-control" type="text" placeholder="QuickBooks" formControlName="software_quickbooks">
+            <input class="col form-control" type="text" placeholder="Other" formControlName="software_other" maxlength="35">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group form-row">
+          <label>Bank: </label>
+          <div class="form-row">
+            <input class="col-9 form-control" type="text" placeholder="NAME" formControlName="bank_name" maxlength="20">
+            <input class="col-3 form-control" type="text" placeholder="QTY" formControlName="bank_qty" maxlength="10">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Credit Cards : </label>
+          <div class="row pl-3 pr-3">
+            <input class="col-9 form-control" type="text" formControlName="credit_card_name" maxlength="20" />
+            <input class="col-3 form-control" type="text" placeholder="QTY" formControlName="credit_card_qty" maxlength="10" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Loans : </label>
+          <input class="form-control" type="text" placeholder="Loans" formControlName="loans" maxlength="35">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Payroll Info : </label>
+          <input class="form-control" type="text" placeholder="Payroll Info" formControlName="payroll_info" maxlength="35">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Prior Depr. Report : </label>
+          <input class="form-control" type="text" placeholder="Prior Depr. Report" formControlName="prior_depr_report" maxlength="100">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Other Special Requests : </label>
+          <input class="form-control" type="text" placeholder="Other Special Requests"
+            formControlName="other_special_requests" maxlength="100">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Quote Amount: </label>
+          <input class="form-control" type="text" placeholder="Quote Amount" formControlName="quote_amount" maxlength="100">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Quote Date: </label>
+          <input class="form-control" type="date" placeholder="Quote Date" formControlName="quote_date">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-body row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Logins: (Must obtain in initial meeting ). : </label>
+          <textarea class="form-control" rows="2" cols="30" name="textarea" placeholder="Partner Acceptance" formControlName="logins"></textarea>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Sales and use tax issue. : </label>
+          <textarea class="form-control" rows="2" cols="30" name="textarea" placeholder="Sales and use tax issue" formControlName="sales_use_tax_issues"></textarea>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Other notes : </label>
+          <textarea formControlName="other_notes" class="form-control" rows="2" cols="30" name="textarea"
+            placeholder="Other notes"></textarea>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Security Questions: </label>
+          <textarea formControlName="security_questions" class="form-control" rows="2" cols="30" name="textarea"
+            placeholder="Security Questions"></textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Personally Paid Business Expenses: </label>
+          <textarea formControlName="personally_paid_business_expenses" class="form-control" rows="2" cols="30"
+            name="textarea" placeholder="Personally Paid Business Expenses"></textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Partner Acceptance: </label>
+          <textarea formControlName="partner_acceptance" class="form-control" rows="2" cols="30" name="textarea"
+            placeholder="Partner Acceptance"></textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Description of bussiness conducted: </label>
+          <textarea formControlName="description_business" class="form-control" rows="2" cols="30" name="textarea"
+            placeholder="Description of business conducted"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

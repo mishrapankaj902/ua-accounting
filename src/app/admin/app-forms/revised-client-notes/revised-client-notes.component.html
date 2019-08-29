@@ -1,0 +1,667 @@
+<form [formGroup]="form" *ngIf="render">
+  <div class="card border-primary mb-3">
+    <div class="card-header text-white bg-primary">
+      Basic Info
+    </div>
+    <div class="card-body form-row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Start Date:</label>
+          <input formControlName="start_date" formControlName="start_date" type="text" class="form-control"
+            placeholder="">
+          <!-- <small class="form-text text-muted">Help text</small> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Due Date:</label>
+          <input formControlName="start_date" formControlName="due_date" type="text" class="form-control"
+            placeholder="">
+          <!-- <small class="form-text text-muted">Help text</small> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Partner:</label>
+          <input formControlName="start_date" formControlName="partner" type="text" class="form-control" placeholder="">
+          <!-- <small class="form-text text-muted">Help text</small> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Manager:</label>
+          <input formControlName="start_date" formControlName="manager" type="text" class="form-control" placeholder="">
+          <!-- <small class="form-text text-muted">Help text</small> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Location:</label>
+          <input formControlName="start_date" formControlName="location" type="text" class="form-control"
+            placeholder="">
+          <!-- <small class="form-text text-muted">Help text</small> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Assign To:</label>
+          <input formControlName="start_date" formControlName="assign_to" type="text" class="form-control"
+            placeholder="">
+          <!-- <small class="form-text text-muted">Help text</small> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Referral/Source</label>
+          <input formControlName="start_date" formControlName="referal" type="text" class="form-control" placeholder="">
+          <!-- <small class="form-text text-muted">Help text</small> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Documents Held @</label>
+          <input formControlName="start_date" formControlName="document_held" type="text" class="form-control"
+            placeholder="">
+          <!-- <small class="form-text text-muted">Help text</small> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Deposit 30/50%</label>
+          <input formControlName="start_date" formControlName="deposit_30" type="text" class="form-control"
+            placeholder="">
+          <!-- <small class="form-text text-muted">Help text</small> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Federal</label>
+          <input formControlName="start_date" formControlName="federal" type="text" class="form-control" placeholder="">
+          <!-- <small class="form-text text-muted">Help text</small> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">State</label>
+          <input formControlName="start_date" formControlName="state" type="text" class="form-control" placeholder="">
+          <!-- <small class="form-text text-muted">Help text</small> -->
+        </div>
+      </div>
+      <div class="col-md-6 m-auto">
+        <label for="">Return Client</label>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label ml-2">
+            <input formControlName="start_date" formCOntrolName="return_client" class="form-check-input" type="radio"
+              value="YES">
+            YES
+          </label>
+          <label class="form-check-label ml-2">
+            <input formControlName="start_date" formCOntrolName="return_client" class="form-check-input" type="radio"
+              value="NO"> NO
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card border-primary mb-3">
+    <div class="card-header text-white bg-primary">
+      Client Notes
+    </div>
+    <div class="card-body" formGroupName="client_notes">
+      <div class="form-row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="">POA - CSS:</label>
+            <input formControlName="poa" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="">Type/Year:</label>
+            <input formControlName="type" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="card-group">
+            <div class="card">
+              <div class="card-body" formGroupName="col1">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="">Name:</label>
+                    <input formControlName="name" type="text" class="form-control" placeholder="">
+                    <!-- <small class="form-text text-muted">Help text</small> -->
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="">Birthday: </label>
+                    <input formControlName="bithday" type="text" class="form-control" placeholder="">
+                    <!-- <small class="form-text text-muted">Help text</small> -->
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="">DOD: </label>
+                    <input formControlName="dod" type="text" class="form-control" placeholder="">
+                    <!-- <small class="form-text text-muted">Help text</small> -->
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="">Occupation: </label>
+                    <input formControlName="occupation" type="text" class="form-control" placeholder="">
+                    <!-- <small class="form-text text-muted">Help text</small> -->
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="">SS:</label>
+                    <input formControlName="ss" type="text" class="form-control" placeholder="">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="">Phone:</label>
+                    <input formControlName="phone" type="text" class="form-control" placeholder="">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="">Email:</label>
+                    <input formControlName="email" type="text" class="form-control" placeholder="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- </div>
+                    <div class="col-md-6"> -->
+            <div class="card">
+              <div class="card-body" formGroupName="col2">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="">Spouse Name (MFS MFJ):</label>
+                    <input formControlName="spouse_name" type="text" class="form-control" placeholder="">
+                    <!-- <small class="form-text text-muted">Help text</small> -->
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="">Birthday: </label>
+                    <input formControlName="birthday" type="text" class="form-control" placeholder="">
+                    <!-- <small class="form-text text-muted">Help text</small> -->
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="">DOD: </label>
+                    <input formControlName="dod" type="text" class="form-control" placeholder="">
+                    <!-- <small class="form-text text-muted">Help text</small> -->
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="">Occupation: </label>
+                    <input formControlName="occupation" type="text" class="form-control" placeholder="">
+                    <!-- <small class="form-text text-muted">Help text</small> -->
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="">SS:</label>
+                    <input formControlName="ss" type="text" class="form-control" placeholder="">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="">Phone:</label>
+                    <input formControlName="phone" type="text" class="form-control" placeholder="">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="">Email:</label>
+                    <input formControlName="email" type="text" class="form-control" placeholder="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card border-primary mb-3" formArrayName="dependents">
+    <div class="card-header text-white bg-primary">
+      Dependents:
+    </div>
+    <div class="card-body">
+      <div class="form-row" [formGroupName]="0">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Name</label>
+            <input formControlName="name" type="text" class="form-control" placeholder="">
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">DOB</label>
+            <input formControlName="dob" type="text" class="form-control" placeholder="">
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-1">
+          <div class="form-group">
+            <label for="">SS</label>
+            <input formControlName="ss" type="text" class="form-control" placeholder="">
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <label for="">Relationship</label>
+            <input formControlName="relation_ship" type="text" class="form-control" placeholder="">
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Education</label>
+            <input formControlName="education" type="text" class="form-control" placeholder="">
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+      </div>
+      <div class="form-row" [formGroupName]="1">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Name</label>
+            <input formControlName="name" type="text" class="form-control" placeholder="">
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">DOB</label>
+            <input formControlName="dob" type="text" class="form-control" placeholder="">
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-1">
+          <div class="form-group">
+            <label for="">SS</label>
+            <input formControlName="ss" type="text" class="form-control" placeholder="">
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <label for="">Relationship</label>
+            <input formControlName="relation_ship" type="text" class="form-control" placeholder="">
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Education</label>
+            <input formControlName="education" type="text" class="form-control" placeholder="">
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+      </div>
+      <div class="form-row" [formGroupName]="2">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Name</label>
+            <input formControlName="name" type="text" class="form-control" placeholder="">
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">DOB</label>
+            <input formControlName="dob" type="text" class="form-control" placeholder="">
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-1">
+          <div class="form-group">
+            <label for="">SS</label>
+            <input formControlName="ss" type="text" class="form-control" placeholder="">
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <label for="">Relationship</label>
+            <input formControlName="relation_ship" type="text" class="form-control" placeholder="">
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="">Education</label>
+            <input formControlName="education" type="text" class="form-control" placeholder="">
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-group mb-3 border-primary">
+    <div class="card border-primary">
+      <div class="card-header text-white bg-primary">
+        Wages & Other Income:
+      </div>
+      <div class="card-body" formGroupName="income">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Wages (W-2):</label>
+            <input formControlName="wage" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="card-header" style="margin: 0.25rem -1.25rem">
+          Other Income:
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Alimony (Need SSN):</label>
+            <input formControlName="alimony" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Business Income (See Sch. C wkst.):</label>
+            <input formControlName="business_income" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Schedule K-1s:</label>
+            <input formControlName="schedule" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Dividends:</label>
+            <textarea formControlName="dividends" class="form-control" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Gambling Winnings:</label>
+            <input formControlName="gambling" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Interest:</label>
+            <input formControlName="interest" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Rental Income (See Sch. E wkst.):</label>
+            <input formControlName="rental_income" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Retirement income:</label>
+            <input formControlName="retirement_income" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Social Security:</label>
+            <input formControlName="social_security" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Stock Sales:</label>
+            <input formControlName="syock_sales" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Unemployment:</label>
+            <input formControlName="un_employment" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Income from Other State:</label>
+            <input formControlName="from_state" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Educator Expenses:</label>
+            <input formControlName="educator_expense" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="card-header" style="margin: 0.25rem -1.25rem">
+          Healthcare:
+        </div>
+        <div class="col-md-12">
+          <div class="form-check form-check-inline">
+            <input formControlName="healthcare" id="my-input" class="form-check-input" type="checkbox">
+            <label for="my-input" class="form-check-label">Taxpayer & Dependents
+              insured for entire year?</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="my-textarea1">Form 2106:</label>
+          <textarea formControlName="form_2016" id="my-textarea1" class="form-control" name="" rows="3"></textarea>
+        </div>
+      </div>
+    </div>
+    <!-- </div>
+
+        <div class="col-md-6"> -->
+    <div class="card border-primary">
+      <div class="card-header text-white bg-primary">
+        Standard Deduction:
+      </div>
+      <div class="card-body" formGroupName="deduction">
+        <div class="card-header" style="margin: 0.25rem -1.25rem">
+          Itemized:
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Real State Property Taxes:</label>
+            <input formControlName="property_tax" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Mortgage interest:</label>
+            <input formControlName="mortage_interest" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Tax Preparation Fees:</label>
+            <input formControlName="tax_preparation_fees" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Non Disc:</label>
+            <textarea formControlName="non_disc" class="form-control" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Sales Tax:</label>
+            <input formControlName="sale_tax" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Charitable Donations (cash):</label>
+            <input formControlName="charitable_donation_cash" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Charitable Donations (non-cash):</label>
+            <input formControlName="charitable_donation_noncash" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Attorney Fees:</label>
+            <input formControlName="attorney_fees" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Medical expenses:</label>
+            <input formControlName="medical_expenses" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">DMV:</label>
+            <input formControlName="dmv" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="card-header" style="margin: 0.25rem -1.25rem">Other:</div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Education expenses:</label>
+            <input formControlName="education_expense" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Student loan interest:</label>
+            <input formControlName="student_loan" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Childcare (Day care credit):</label>
+            <input formControlName="childcare" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">IRA/Retirement Contribution:</label>
+            <input formControlName="retirement_contribution" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Moving expenses:</label>
+            <input formControlName="moving_expense" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Energy Credits:</label>
+            <input formControlName="energy_credits" type="text" class="form-control" placeholder="">
+            <!-- <small class="form-text text-muted">Help text</small> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card border-primary mb-3 border-primary">
+    <div class="card-body form-row" formGroupName="others">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="">Other Notes:</label>
+          <textarea formControlName="other_notes" class="form-control" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Expected refund/due:</label>
+          <input formControlName="refund" type="text" class="form-control" placeholder="" aria-describedby="helpId">
+          <!-- <small id="helpId" class="text-muted">Help text</small> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Routing Number:</label>
+          <input formControlName="routing_number" type="text" class="form-control" placeholder=""
+            aria-describedby="helpId">
+          <!-- <small id="helpId" class="text-muted">Help text</small> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Account Number:</label>
+          <input formControlName="account_number" type="text" class="form-control" placeholder=""
+            aria-describedby="helpId">
+          <!-- <small id="helpId" class="text-muted">Help text</small> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Financial institution:</label>
+          <input formControlName="financial_institution" type="text" class="form-control" placeholder=""
+            aria-describedby="helpId">
+          <!-- <small id="helpId" class="text-muted">Help text</small> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Date:</label>
+          <input formControlName="date" type="text" class="form-control" placeholder="" aria-describedby="helpId">
+          <!-- <small id="helpId" class="text-muted">Help text</small> -->
+        </div>
+      </div>
+      <div class="col-md-6 m-auto">
+        <label for="">Estimated Tax Coupons Needed?</label>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label ml-2">
+            <input formControlName="coupons_needed" class="form-check-input" type="radio" value="YES">
+            YES
+          </label>
+          <label class="form-check-label ml-2">
+            <input formControlName="coupons_needed" class="form-check-input" type="radio" value="NO"> NO
+          </label>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="">Partner Acceptance:</label>
+          <textarea formControlName="partner_acceptance" class="form-control" rows="3"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

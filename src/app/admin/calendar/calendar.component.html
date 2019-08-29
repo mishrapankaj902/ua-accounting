@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="block-header">
+      <div class="row">
+        <div class="col-lg-5 col-md-8 col-sm-12">
+          <h5>Calendar </h5>
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/admin']"><i class="icon-home"></i></a></li>
+            <li class="breadcrumb-item">Events</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <h1>User Calendar</h1>
+      <div *ngIf="authenticated; then welcomeUser else signInPrompt"></div>
+      <ng-template #welcomeUser>
+        <h4>Welcome {{ authService.user ? authService.user.displayName: 'Gaurav Pratap' }}!</h4>
+      </ng-template>
+      <ng-template #signInPrompt>
+        <a href="javascript:undefined" class="btn btn-primary btn-large" role="button" (click)="signIn()">Click to Connect</a>
+      </ng-template>
+    </div>
+  
+    <div class="row clearfix">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="header">
+            <h2>Calendar </h2>
+          </div>
+          <div class="body table-responsive">  
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Organizer</th>
+                  <th>Subject</th>
+                  <th>Start</th>
+                  <th>End</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let event of events">
+                    <td>{{event.organizer.emailAddress.name}}</td>
+                    <td>{{event.subject}}</td>
+                    <td>{{formatDateTimeTimeZone(event.start) | date:'short' }}</td>
+                    <td>{{formatDateTimeTimeZone(event.end) | date: 'short' }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

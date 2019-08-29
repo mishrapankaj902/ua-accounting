@@ -1,0 +1,551 @@
+<div id="left-sidebar" class="sidebar" *ngIf="defaultSidebar" style="overflow-y:scroll;">
+    <div class="sidebar-scroll">
+        <div class="side-rpt-bx pd-top">
+            <div class="list-group list-widget">
+                <a href="app-inbox.html" class="list-group-item">
+                    <span class="badge badge-success">654</span>
+                    <i class="fa fa-envelope text-muted"></i>Inbox</a>
+                <a href="javascript:void(0);" class="list-group-item">
+                    <span class="badge badge-info">364</span>
+                    <i class="fa fa-eye text-muted"></i> Profile visits</a>
+                <a href="javascript:void(0);" class="list-group-item">
+                    <span class="badge badge-warning">12</span>
+                    <i class="fa fa-phone text-muted"></i> Call</a>
+                <a href="javascript:void(0);" class="list-group-item">
+                    <span class="badge badge-danger">54</span>
+                    <i class="fa fa-comments-o text-muted"></i> Messages</a>
+                <a href="javascript:void(0);" class="list-group-item">
+                    <span class="badge badge-warning">19</span>
+                    <i class="fa fa-bookmark text-muted"></i> Bookmarks</a>
+                <a href="javascript:void(0);" class="list-group-item">
+                    <span class="badge">56</span>
+                    <i class="fa fa-bell text-muted"></i> Notifications</a>
+                <a href="javascript:void(0);" class="list-group-item">
+                    <span class="badge badge-info">25</span>
+                    <i class="fa fa-clock-o text-muted"></i> Watch</a>
+            </div>
+        </div>  
+        <div class="side-rpt-bx">
+            <div class="s-feed-wrap">
+                <div class="s-feed-head"> 
+                <h4>Feeds</h4>        
+                <p>Description text here</p>
+                </div>
+                <div class="s-feed-content">   
+                    <ul class="list-unstyled feeds_widget">
+						<li>
+							<div class="feeds-left"><i class="fa fa-thumbs-o-up"></i></div>
+							<div class="feeds-body">
+								<h4 class="title">7 New Feedback <small class="float-right text-muted">Today</small></h4>
+								<small>It will give a smart finishing to your site</small>
+							</div>
+						</li>
+						<li>
+							<div class="feeds-left"><i class="fa fa-user"></i></div>
+							<div class="feeds-body">
+								<h4 class="title">New User <small class="float-right text-muted">10:45</small></h4>
+								<small>I feel great! Thanks team</small>
+							</div>
+						</li>
+						<li>
+							<div class="feeds-left"><i class="fa fa-question-circle"></i></div>
+							<div class="feeds-body">
+								<h4 class="title text-warning">Server Warning <small
+										class="float-right text-muted">10:50</small></h4>
+								<small>Your connection is not private</small>
+							</div>
+						</li>
+						<li>
+							<div class="feeds-left"><i class="fa fa-check"></i></div>
+							<div class="feeds-body">
+								<h4 class="title text-danger">Issue Fixed <small
+										class="float-right text-muted">11:05</small></h4>
+								<small>WE have fix all Design bug with Responsive</small>
+							</div>
+						</li>
+						<li>
+							<div class="feeds-left"><i class="fa fa-shopping-basket"></i></div>
+							<div class="feeds-body">
+								<h4 class="title">7 New Orders <small class="float-right text-muted">11:35</small></h4>
+								<small>You received a new oder from Tina.</small>
+							</div>
+						</li>
+					</ul>   
+                    
+                </div>
+            </div>
+        </div> 
+            <div class="s-qk-link">
+                <div routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [ngClass]="{'active':currentActiveMenu == 'dashboard'}">
+                    <h4 class="s-qk-link-head has-arrow" (click)="activeInactiveMenu('dashboard')">Projects 
+                        <a href="javascript:void(0);"> <i class="fa fa-caret-right"></i></a>
+                    </h4>
+                </div>
+                <ul *ngIf="currentActiveMenu == 'dashboard'">
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-projects-list']">My Pipeline</a></li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-projects-list']">Tax Return</a> </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-projects-list']">Bookkeeping</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sd-b-qklnk">
+                <h4>Quick Link</h4>
+                <ul>
+                    <li>
+                        <a href="javascript:void(0);">Calendar <i class="fa fa-caret-right"></i></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Email <i class="fa fa-caret-right"></i></a>
+                    </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a [routerLink]="['/admin/app/app-chat']">Chat <i class="fa fa-caret-right"></i></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Reports <i class="fa fa-caret-right"></i></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Contacts <i class="fa fa-caret-right"></i></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Settings <i class="fa fa-caret-right"></i></a>
+                    </li>
+                </ul>
+            </div>       
+    </div>
+</div>
+<div id="left-sidebar" class="sidebar" *ngIf="defaultSidebar" style="overflow-y:scroll;">
+    <div class="sidebar-scroll">
+        <div class="side-rpt-bx pd-top">
+            <div class="list-group list-widget">
+                <a href="app-inbox.html" class="list-group-item">
+                    <span class="badge badge-success">654</span>
+                    <i class="fa fa-envelope text-muted"></i>Inbox</a>
+                <a href="javascript:void(0);" class="list-group-item">
+                    <span class="badge badge-info">364</span>
+                    <i class="fa fa-eye text-muted"></i> Profile visits</a>
+                <a href="javascript:void(0);" class="list-group-item">
+                    <span class="badge badge-warning">12</span>
+                    <i class="fa fa-phone text-muted"></i> Call</a>
+                <a href="javascript:void(0);" class="list-group-item">
+                    <span class="badge badge-danger">54</span>
+                    <i class="fa fa-comments-o text-muted"></i> Messages</a>
+                <a href="javascript:void(0);" class="list-group-item">
+                    <span class="badge badge-warning">19</span>
+                    <i class="fa fa-bookmark text-muted"></i> Bookmarks</a>
+                <a href="javascript:void(0);" class="list-group-item">
+                    <span class="badge">56</span>
+                    <i class="fa fa-bell text-muted"></i> Notifications</a>
+                <a href="javascript:void(0);" class="list-group-item">
+                    <span class="badge badge-info">25</span>
+                    <i class="fa fa-clock-o text-muted"></i> Watch</a>
+            </div>
+        </div>  
+        <div class="side-rpt-bx">
+            <div class="s-feed-wrap">
+                <div class="s-feed-head"> 
+                <h4>Feeds</h4>        
+                <p>Description text here</p>
+                </div>
+                <div class="s-feed-content">   
+                    <ul class="list-unstyled feeds_widget">
+						<li>
+							<div class="feeds-left"><i class="fa fa-thumbs-o-up"></i></div>
+							<div class="feeds-body">
+								<h4 class="title">7 New Feedback <small class="float-right text-muted">Today</small></h4>
+								<small>It will give a smart finishing to your site</small>
+							</div>
+						</li>
+						<li>
+							<div class="feeds-left"><i class="fa fa-user"></i></div>
+							<div class="feeds-body">
+								<h4 class="title">New User <small class="float-right text-muted">10:45</small></h4>
+								<small>I feel great! Thanks team</small>
+							</div>
+						</li>
+						<li>
+							<div class="feeds-left"><i class="fa fa-question-circle"></i></div>
+							<div class="feeds-body">
+								<h4 class="title text-warning">Server Warning <small
+										class="float-right text-muted">10:50</small></h4>
+								<small>Your connection is not private</small>
+							</div>
+						</li>
+						<li>
+							<div class="feeds-left"><i class="fa fa-check"></i></div>
+							<div class="feeds-body">
+								<h4 class="title text-danger">Issue Fixed <small
+										class="float-right text-muted">11:05</small></h4>
+								<small>WE have fix all Design bug with Responsive</small>
+							</div>
+						</li>
+						<li>
+							<div class="feeds-left"><i class="fa fa-shopping-basket"></i></div>
+							<div class="feeds-body">
+								<h4 class="title">7 New Orders <small class="float-right text-muted">11:35</small></h4>
+								<small>You received a new oder from Tina.</small>
+							</div>
+						</li>
+					</ul>   
+                    
+                </div>
+            </div>
+        </div> 
+            <div class="s-qk-link">
+                <div routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [ngClass]="{'active':currentActiveMenu == 'dashboard'}">
+                    <h4 class="s-qk-link-head has-arrow" (click)="activeInactiveMenu('dashboard')">Projects 
+                        <a href="javascript:void(0);"> <i class="fa fa-caret-right"></i></a>
+                    </h4>
+                </div>
+                <ul *ngIf="currentActiveMenu == 'dashboard'">
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-projects-list']">My Pipeline</a></li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-projects-list']">Tax Return</a> </li>
+                    <!-- <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-projects-list']">Bookkeeping</a> -->
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/bookkeeping']">Bookkeeping</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sd-b-qklnk">
+                <h4>Quick Link</h4>
+                <ul>
+                    <li>
+                        <a href="javascript:void(0);">Calendar <i class="fa fa-caret-right"></i></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Email <i class="fa fa-caret-right"></i></a>
+                    </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a [routerLink]="['/admin/app/app-chat']">Chat <i class="fa fa-caret-right"></i></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Reports <i class="fa fa-caret-right"></i></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Contacts <i class="fa fa-caret-right"></i></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Settings <i class="fa fa-caret-right"></i></a>
+                    </li>
+                    <li>
+                        <a href="/admin/past-projects">Past Projects <i class="fa fa-caret-right"></i></a>
+                    </li>
+                </ul>
+            </div>       
+    </div>
+</div>
+
+
+
+
+
+<div id="left-sidebar" class="sidebar" *ngIf="!defaultSidebar" style="overflow-y:scroll;">
+                <div class="sidebar-scroll">
+                        <div class="side-rpt-bx pd-top">
+                                <div class="head-top">
+                                  <h4>Details</h4>
+                                  <ul class="head-link">
+                                    <li>
+                                      <a href="javascript:void(0);"><i class="fa fa-pencil"></i></a>
+                                    </li>
+                                    <li>
+                                      <a href="javascript:void(0);" (click)="clickEvent()">
+                                        <div class="up-dwn-aw">
+                                            <i class="fa fa-angle-up"></i>
+                                            <i class="fa fa-angle-down"></i>
+                                        </div>
+                                        
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a class="font-weight-bold" href="javascript:void(0);">Customize field </a>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="head-content" [ngClass]="tglaccord ? 'hidebtm' : 'showbtm'">
+                                  <div class="dl-horizontal">
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Won time
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                            Oct 30, 2018
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Keyword Ideas
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                            Temp
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Credit Card Number
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                            Oct 30, 2018
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Exp Date
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                            Temp
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            CV2 Code
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                            Oct 30, 2018
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Billing Date
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                            Temp
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Start Date
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                            Oct 30, 2018
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Tag 
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                            Temp
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Billing Name
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                            Oct 30, 2018
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Lead Source 
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                            Temp
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Email Compaign ID
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                            Oct 30, 2018
+                                        </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>  
+                            <div class="side-rpt-bx pd-top">
+                                <div class="head-top">
+                                  <h4>Person</h4>
+                                  <ul class="head-link">
+                                    <li>
+                                      <a href="javascript:void(0);"><i class="fa fa-pencil"></i></a>
+                                    </li>
+                                    <li>
+                                      <a href="javascript:void(0);" (click)="prsnclickEvent()">
+                                        <div class="up-dwn-aw">
+                                            <i class="fa fa-angle-up"></i>
+                                            <i class="fa fa-angle-down"></i>
+                                        </div>
+                                        
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a class="font-weight-bold" href="javascript:void(0);"><i class="fa fa-cog"></i> </a>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="head-content" [ngClass]="ptglaccord ? 'prsnhidebtm' : 'prsnshowbtm'">
+                                  <div class="dl-horizontal">
+                                      <div class="row align-items-center">
+                                          <label class="col-sm-5 text-right">
+                                              <div class="prsn-avt">
+                                                <!-- <img src="img/team5.jpg" /> -->
+                                                <i class="fa fa-user"></i>
+                                              </div>
+                                            </label>
+                                          <h4 class="col-sm-7">
+                                            Bee Fruity & Nutty
+                                          </h4>
+                                      </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Label
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Phone
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                            555-555-555 (Work)
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Email
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                            temp@info.com (Work)
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Website
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Notes
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Customer Comments
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Tag
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Source 
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Instant messanger
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Postal address 
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                        </h4>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div> 
+                            <div class="side-rpt-bx pd-top">
+                                <div class="head-top" (click)="orgclickEvent()">
+                                  <h4>Organization</h4>
+                                  <ul class="head-link">
+                                    <li>
+                                      <a href="javascript:void(0);"><i class="fa fa-pencil"></i></a>
+                                    </li>
+                                    <li>
+                                      <a ref="javascript:void(0);">
+                                        <div class="up-dwn-aw">
+                                            <i class="fa fa-angle-up"></i>
+                                            <i class="fa fa-angle-down"></i>
+                                        </div>
+                                        
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a class="font-weight-bold" href="javascript:void(0);"><i class="fa fa-cog"></i> </a>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="head-content" [ngClass]="otglaccord ? 'orghidebtm' : 'orgshowbtm'">
+                                  <div class="dl-horizontal">
+                                      <div class="row align-items-center">
+                                          <label class="col-sm-5 text-right">
+                                              <div class="prsn-avt">
+                                                <!-- <img src="img/team5.jpg" /> -->
+                                                <i class="fa fa-building"></i>
+                                              </div>
+                                            </label>
+                                          <h4 class="col-sm-7">
+                                            Bee Fruity & Nutty
+                                          </h4>
+                                      </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Label
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Website address
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Industry
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Target Market
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Address
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                          123 Marks Street, Handerson, NY, USA
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">
+                                            Monthly Adwords Spend
+                                        </label>
+                                        <h4 class="col-sm-7">
+                                        </h4>
+                                    </div>
+                                    
+                                    <div class="smrt-cnt-gd">
+                                        <span>Smart contact data info <i>Gold</i></span>
+                                        <a class="text-primary" href="javascript:void(0);">Show more</a>
+                                    </div>
+                                  </div> 
+                                </div>
+                            </div>
+                </div>
+            </div>

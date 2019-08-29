@@ -1,0 +1,27 @@
+<!-- Page Loader -->
+<div class="body {{themeClass}} {{smallScreenMenu}}">
+	<app-loader></app-loader>
+	<div id="wrapper">
+
+		<!-- Overlay For Sidebars -->
+
+		<app-header [showNotifMenu]="showNotifMenu" [showToggleMenu]="showToggleMenu"
+			(toggleSettingDropMenuEvent)="toggleSettingDropMenu()"
+			(toggleNotificationDropMenuEvent)="toggleNotificationDropMenu()"></app-header>
+
+		<ng-template [hasPermission]="'isClient'">
+			<app-sidebar-client [sidebarVisible]="sidebarService.sidebarVisible" [navTab]="navTab"
+				[currentActiveMenu]="currentActiveMenu" [currentActiveSubMenu]="currentActiveSubMenu"
+				(activeInactiveMenuEvent)="activeInactiveMenu($event)"></app-sidebar-client>
+		</ng-template>
+		<ng-template [hasPermission]="'isAdmin'">
+			<app-sidebar [sidebarVisible]="sidebarService.sidebarVisible" [navTab]="navTab"
+				[currentActiveMenu]="currentActiveMenu" [currentActiveSubMenu]="currentActiveSubMenu"
+				(activeInactiveMenuEvent)="activeInactiveMenu($event)"></app-sidebar>
+		</ng-template>
+		<div id="main-content" [ngClass]="{'layout-fullwidth':!sidebarService.sidebarVisible}">
+
+			<router-outlet (activate)="getActiveRoutes()"></router-outlet>
+		</div>
+	</div>
+</div>

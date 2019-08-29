@@ -1,0 +1,44 @@
+<div id="wrapper">
+	<div class="vertical-align-wrap">
+		<div class="vertical-align-middle">
+			<div style="max-width: 480px; margin: auto">
+				<div class="top">
+					<img src="assets/images/ua-logo.png" alt="Unique Accounting">
+				</div>
+				<div class="card">
+					<div class="header">
+						<p class="lead">Login to your account</p>
+					</div>
+					<div class="body">
+						<form class="form-auth-small" [formGroup]="loginForm" (submit)="onSubmit()">
+							<div class="form-group">
+								<label for="signin-email" class="control-label sr-only">Email</label>
+								<input type="email" class="form-control" formControlName="email" id="signin-email"
+									placeholder="Email">
+							</div>
+							<div class="form-group">
+								<label for="signin-password" class="control-label sr-only">Password</label>
+								<input type="password" class="form-control" id="signin-password"
+									formControlName="password" placeholder="Password">
+							</div>
+							<div class="form-group clearfix">
+								<label class="fancy-checkbox element-left">
+									<input type="checkbox" name="rem_me">
+									<span>Remember me</span>
+								</label>
+							</div>
+							<button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="loader"><span *ngIf="loader" class="spinner-border spinner-border-sm"></span>LOGIN</button>
+							<div class="bottom">
+								<span class="helper-text m-b-10"><i class="fa fa-lock"></i>&nbsp;<a
+										[routerLink]="['/authentication/page-forgot-password']">Forgot
+										password?</a></span>
+								<span>Don't have an account? <a
+										[routerLink]="['/authentication/page-register']">Register</a></span>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
