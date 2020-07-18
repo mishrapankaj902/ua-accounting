@@ -21,7 +21,7 @@
     "firebase-admin": "^7.0.0",
     "firebase-functions": "^2.3.0",
     "handlebars": "^4.1.2",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "nodemailer": "^6.2.1"
   },
   "devDependencies": {
